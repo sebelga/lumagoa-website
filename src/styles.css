@@ -1,3 +1,11 @@
-@config "./tailwind.config.js";
-
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: pastel --default, dim --prefersdark;
+}
+@plugin "daisyui/theme" {
+  name: "pastel";
+  default: true;
+  --color-primary: #c28a78ff;
+  --color-primary-content: #fff;
+}
+@custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
