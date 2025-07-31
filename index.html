@@ -11,13 +11,13 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
-  <body class="bg-white font-sans text-gray-900 antialiased">
+  <body class="bg-white pt-16 font-sans text-gray-900 antialiased md:pt-21">
     <!-- Header -->
     <header class="fixed top-0 left-0 z-10 w-full bg-white shadow-sm">
-      <div class="container mx-auto navbar bg-base-100 p-2 md:p-4">
+      <div class="container mx-auto navbar bg-base-100 p-4 md:p-6">
         <div class="navbar-start">
           <div class="dropdown">
-            <div tabindex="0" role="button" class="p-2 lg:hidden">
+            <div tabindex="0" role="button" class="pr-2 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -57,9 +57,9 @@
               </li>
             </ul>
           </div>
-          <a class="block text-teal-600" href="#">
+          <a class="block lg:-ml-[8px]" href="#">
             <span class="sr-only">Home</span>
-            <img src="src/img/logo.svg" class="w-28 md:w-36" alt="Home" />
+            <img src="/img/logo.svg" class="w-28 md:w-36" alt="Home" />
           </a>
         </div>
 
@@ -69,108 +69,186 @@
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#"> Rooms </a>
+              <a href="#rooms"> Rooms </a>
             </li>
 
             <li>
-              <a href="#"> Yoga Shala </a>
+              <a href="#upcoming"> Yoga Shala </a>
             </li>
 
-            <li>
-              <a href="#"> Massage </a>
-            </li>
+            <!-- <li>
+                <a href="#"> Massage </a>
+              </li> -->
 
             <li>
-              <a href="#"> Contact </a>
+              <a href="#contact"> Contact </a>
             </li>
           </ul>
         </div>
 
         <div class="navbar-end">
-          <a class="btn btn-primary md:w-32">Book now</a>
+          <a
+            class="btn btn-primary md:w-32"
+            href="https://bookingengine.stayflexi.com/?hotel_id=31402"
+            target="_blank"
+            >Book now</a
+          >
         </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-16 md:pt-22">
-      <div class="relative h-96">
-        <img
-          src="https://placehold.co/1920x800?text=Full-Width+Hero+Image+of+the+Resort+in+South+Goa"
-          alt="Luma Goa Resort"
-          class="h-full w-full object-cover"
-        />
+    <section
+      id="home"
+      class="h-[75vh] overflow-hidden bg-[url(/img/hero-bg.jpeg)] bg-cover bg-center bg-no-repeat"
+    >
+      <div
+        class="flex h-full items-center bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24"
+      >
         <div
-          class="bg-opacity-30 absolute inset-0 flex items-center justify-center bg-black"
+          class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right"
         >
-          <h2 class="text-center text-5xl font-bold text-white">
-            Welcome to Luma Goa
+          <h2 class="text-5xl font-bold text-white md:text-7xl">
+            Dream Beneath the Goan Sky
           </h2>
+
+          <p class="mt-6 max-w-lg text-white/90 md:text-lg md:leading-relaxed">
+            Cozy A-Frame huts and magical open-sky bathrooms create the perfect
+            getaway for relaxation, adventure, and unforgettable memories.
+          </p>
+
+          <div class="mt-4 sm:mt-8">
+            <a
+              href="https://bookingengine.stayflexi.com/?hotel_id=31402"
+              target="_blank"
+              class="btn btn-primary md:w-32"
+            >
+              Book now
+            </a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Intro Description -->
-      <div class="container mx-auto px-6 py-12 text-center">
-        <p class="mx-auto max-w-2xl text-lg">
-          Nestled in the serene landscapes of South Goa, Luma Goa offers a
-          peaceful retreat with comfortable accommodations and a focus on
-          relaxation. Discover our rooms and plan your stay today.
-        </p>
+    <!-- Welcome Section -->
+    <section id="welcome" class="my-4 md:my-12">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div class="rounded-box bg-primary/33 p-4 md:p-12 lg:px-16 lg:py-24">
+            <div class="mx-auto max-w-xl text-center">
+              <h2 class="text-2xl font-bold md:text-3xl">Welcome to Luma!</h2>
+
+              <div class="mt-4 text-base-content/90 md:mt-12">
+                <p>
+                  Welcome to Luma, a tranquil retreat tucked away in the heart
+                  of South Goa. Our 9 A-Frame huts blend rustic charm with a
+                  touch of magic—each featuring a private open-sky bathroom for
+                  showering under the stars.
+                </p>
+                <p class="mt-4">
+                  Just a short hop from the coast, we offer a peaceful escape
+                  surrounded by nature, perfect for those seeking simplicity and
+                  serenity in one of India's most beloved destinations.
+                </p>
+                <p class="mt-4">
+                  Unplug, unwind, and let South Goa's magic wash over you.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
+            <img
+              alt=""
+              src="/img/hut-1.jpeg"
+              class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full"
+            />
+
+            <img
+              alt=""
+              src="/img/gabrielle-maurer-hv1M-3MI80s-unsplash.jpg"
+              class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Rooms Section with Carousel Gallery -->
-    <section id="rooms" class="bg-gray-50 py-12">
+    <section id="rooms" class="bg-gray-50 py-4 md:py-12">
       <div class="container mx-auto px-6">
-        <h2 class="mb-8 text-center text-3xl font-bold">Our Rooms</h2>
-        <div class="swiper relative mx-auto max-w-4xl">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img
-                src="https://placehold.co/800x600?text=Room+Image+1"
-                alt="Room 1"
-                class="h-96 w-full rounded-lg object-cover"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://placehold.co/800x600?text=Room+Image+2"
-                alt="Room 2"
-                class="h-96 w-full rounded-lg object-cover"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://placehold.co/800x600?text=Room+Image+3"
-                alt="Room 3"
-                class="h-96 w-full rounded-lg object-cover"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://placehold.co/800x600?text=Room+Image+4"
-                alt="Room 4"
-                class="h-96 w-full rounded-lg object-cover"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://placehold.co/800x600?text=Room+Image+5"
-                alt="Room 5"
-                class="h-96 w-full rounded-lg object-cover"
-              />
+        <h2 class="text-1xl mb-2 text-center font-bold md:text-2xl">
+          Our Rooms
+        </h2>
+        <h3 class="mb-8 text-center text-3xl font-bold md:mb-16 md:text-5xl">
+          Beautiful A-Frame huts
+        </h3>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div class="p-4">
+            <img
+              alt=""
+              src="/img/hut-2.jpeg"
+              class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full"
+            />
+          </div>
+          <div class="p-4">
+            <div class="flex h-full items-center text-center">
+              <div>
+                <h4 class="mb-4 text-2xl font-bold">Private Balcony Oasis</h4>
+                <p>
+                  Relax on your 9m² private balcony overlooking lush gardens.
+                  Immerse yourself in tranquility, surrounded by nature and the
+                  soothing melodies of birdsong.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="swiper-button-prev text-gray-800"></div>
-          <div class="swiper-button-next text-gray-800"></div>
-          <div class="swiper-pagination"></div>
+          <div class="p-4">
+            <img
+              alt=""
+              src="/img/room-2.jpeg"
+              class="mb-4 w-full rounded-box"
+            />
+            <img alt="" src="/img/room-3.jpeg" class="w-full rounded-box" />
+          </div>
         </div>
-        <div class="mt-8 text-center">
-          <a
-            href="#contact"
-            class="rounded-lg bg-blue-600 px-8 py-3 text-white transition hover:bg-blue-700"
-            >Book a Room</a
-          >
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div class="p-4">
+            <div class="flex h-full items-center text-center">
+              <div>
+                <h4 class="mb-4 text-2xl font-bold">Comfort & Spaciousness</h4>
+                <p>
+                  Our cozy 25m² interiors feature spacious comfort, a plush
+                  mattress, air conditioning, and a ceiling fan—creating your
+                  perfect retreat after a day by the beach.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <img
+              alt=""
+              src="/img/bathroom-2.jpeg"
+              class="h-150 w-full rounded-box object-cover object-top"
+            />
+          </div>
+          <div class="p-4">
+            <div class="mb-8">
+              <h4 class="mb-4 text-2xl font-bold">Open-Sky Serenity</h4>
+              <p>
+                Refresh under a private open-sky bathroom, blending nature with
+                luxury as you shower beneath Goa’s sunlit skies or starry
+                nights.
+              </p>
+            </div>
+            <img
+              alt=""
+              src="/img/bathroom-1.jpeg"
+              class="mb-4 w-full rounded-box"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -178,13 +256,19 @@
     <!-- Upcoming Amenities Section -->
     <section id="upcoming" class="py-12">
       <div class="container mx-auto px-6">
-        <h2 class="mb-8 text-center text-3xl font-bold">Upcoming Amenities</h2>
+        <h2 class="mb-4 text-center text-3xl font-bold md:mb-8 md:text-5xl">
+          Upcoming Amenities
+        </h2>
+        <p class="mb-12 text-center text-lg text-base-content/60">
+          Ready for the 2025/2026 season!
+        </p>
+
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div class="text-center">
             <img
-              src="https://placehold.co/800x600?text=Yoga+Shala+Stock+Image"
+              src="/img/jared-rice-xce530fBHrk-unsplash.jpg"
               alt="Yoga Shala"
-              class="mb-4 h-64 w-full rounded-lg object-cover"
+              class="mb-8 h-96 w-full rounded-lg object-cover object-top"
             />
             <h3 class="mb-2 text-2xl font-bold">Yoga Shala</h3>
             <p class="text-lg">
@@ -195,14 +279,16 @@
           </div>
           <div class="text-center">
             <img
-              src="https://placehold.co/800x600?text=Cafe+Restaurant+Stock+Image"
+              src="/img/olena-bohovyk-OqqjgMR5PIA-unsplash.jpg"
               alt="Café Restaurant"
-              class="mb-4 h-64 w-full rounded-lg object-cover"
+              class="mb-8 h-96 w-full rounded-lg object-cover"
             />
             <h3 class="mb-2 text-2xl font-bold">Café Restaurant</h3>
             <p class="text-lg">
-              Coming soon: A cozy café restaurant offering delicious local and
-              international cuisine exclusively for our guests.
+              We are excited to announce the construction of Roots and Bloom,
+              our vegan and vegetarian café, located right next to Luma Goa.
+              This new addition will offer delicious, healthy meals, with
+              breakfast included for all our guests.
             </p>
           </div>
         </div>
@@ -210,48 +296,107 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-50 py-12">
+    <section id="contact" class="bg-gray-50 py-4 md:py-12">
       <div class="container mx-auto px-6">
-        <h2 class="mb-8 text-center text-3xl font-bold">Contact Us</h2>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div class="flex flex-col justify-center">
+        <h2 class="mb-8 text-center text-3xl font-bold md:text-5xl">
+          Contact Us
+        </h2>
+
+        <div class="flex flex-col md:flex-row">
+          <div class="p-4 md:w-1/3">
             <p class="mb-4">
-              <strong>Address:</strong> [Your Resort Address], South Goa, India
-              403XXX
+              <strong>Address:</strong> Palolem Down St, Palolem, Canacona,
+              South Goa 403702, India 403XXX
             </p>
-            <p class="mb-4"><strong>Phone:</strong> +91 XXX-XXXXXXX</p>
+            <p class="mb-4"><strong>Phone:</strong> +91 808 772 34 55</p>
             <p class="mb-4"><strong>Email:</strong> info@lumagoa.com</p>
           </div>
-          <div>
+
+          <div class="p-4 md:w-2/3">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.7890123456!2d73.827!3d15.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sSouth%20Goa%2C%20Goa!5e0!3m2!1sen!2sin!4v1722332287486!5m2!1sen!2sin"
               width="100%"
-              height="300"
+              height="400"
+              frameborder="0"
               style="border: 0"
-              allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAMs_QCrAi4FicxfDdEX6m-rsp-ItkqVH4&q=15.0128486,74.0201883&zoom=15"
+              allowfullscreen
+            >
+            </iframe>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-white">
-      <div class="container mx-auto flex justify-center space-x-8 px-6">
-        <a
-          href="https://www.instagram.com/lumagoa"
-          target="_blank"
-          class="transition hover:text-gray-300"
-          >Instagram</a
+    <footer class="bg-gray-100">
+      <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="flex justify-center text-teal-600">
+          <img src="/img/logo-square.svg" class="w-28 md:w-36" alt="Home" />
+        </div>
+
+        <p
+          class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500"
         >
-        <a
-          href="https://www.facebook.com/lumagoa"
-          target="_blank"
-          class="transition hover:text-gray-300"
-          >Facebook</a
+          "All our dreams can come true, if we have the courage to pursue them."
+          - Walt Disney
+        </p>
+
+        <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+          <li>
+            <a
+              href="https://www.facebook.com/lumagoa"
+              rel="noreferrer"
+              target="_blank"
+              class="text-gray-700 transition hover:text-gray-700/75"
+            >
+              <span class="sr-only">Facebook</span>
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.instagram.com/luma.goa"
+              rel="noreferrer"
+              target="_blank"
+              class="text-gray-700 transition hover:text-gray-700/75"
+            >
+              <span class="sr-only">Instagram</span>
+              <svg
+                class="size-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <p
+          class="mx-auto mt-6 max-w-md text-center text-sm leading-relaxed text-gray-500"
         >
+          © 2025 Made with 🤍 in Goa |
+          <a href="/terms-and-services">Terms and services</a>
+        </p>
       </div>
     </footer>
 
