@@ -1,133 +1,275 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luma Goa</title>
-  <link rel="stylesheet" href="/src/styles.css"> <!-- Link to Tailwind CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-</head>
-<body class="font-sans antialiased text-gray-900 bg-white">
+<!doctype html>
+<html lang="en" data-theme="pastel">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luma Goa</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <!-- Link to Tailwind CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="bg-white font-sans text-gray-900 antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 z-10 w-full bg-white shadow-sm">
+      <div class="container mx-auto navbar bg-base-100 p-2 md:p-4">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="p-2 lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="dropdown-content menu z-1 mt-3 w-52 menu-sm rounded-box bg-base-100 p-2 shadow"
+            >
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#"> Rooms </a>
+              </li>
 
-  <!-- Header Menu -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow-md z-10">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Luma Goa</h1>
-      <ul class="flex space-x-8">
-        <li><a href="#home" class="hover:text-gray-600 transition">Home</a></li>
-        <li><a href="#rooms" class="hover:text-gray-600 transition">Rooms</a></li>
-        <li><a href="#upcoming" class="hover:text-gray-600 transition">Upcoming</a></li>
-        <li><a href="#contact" class="hover:text-gray-600 transition">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+              <li>
+                <a href="#"> Yoga Shala </a>
+              </li>
 
-  <!-- Hero Section -->
-  <section id="home" class="pt-20">
-    <div class="relative h-96">
-      <img src="https://placehold.co/1920x800?text=Full-Width+Hero+Image+of+the+Resort+in+South+Goa" alt="Luma Goa Resort" class="w-full h-full object-cover">
-      <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30">
-        <h2 class="text-white text-5xl font-bold text-center">Welcome to Luma Goa</h2>
-      </div>
-    </div>
+              <li>
+                <a href="#"> Massage </a>
+              </li>
 
-    <!-- Intro Description -->
-    <div class="container mx-auto px-6 py-12 text-center">
-      <p class="text-lg max-w-2xl mx-auto">Nestled in the serene landscapes of South Goa, Luma Goa offers a peaceful retreat with comfortable accommodations and a focus on relaxation. Discover our rooms and plan your stay today.</p>
-    </div>
-  </section>
-
-  <!-- Rooms Section with Carousel Gallery -->
-  <section id="rooms" class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Our Rooms</h2>
-      <div class="swiper relative max-w-4xl mx-auto">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="https://placehold.co/800x600?text=Room+Image+1" alt="Room 1" class="w-full h-96 object-cover rounded-lg">
+              <li>
+                <a href="#"> Contact </a>
+              </li>
+            </ul>
           </div>
-          <div class="swiper-slide">
-            <img src="https://placehold.co/800x600?text=Room+Image+2" alt="Room 2" class="w-full h-96 object-cover rounded-lg">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://placehold.co/800x600?text=Room+Image+3" alt="Room 3" class="w-full h-96 object-cover rounded-lg">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://placehold.co/800x600?text=Room+Image+4" alt="Room 4" class="w-full h-96 object-cover rounded-lg">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://placehold.co/800x600?text=Room+Image+5" alt="Room 5" class="w-full h-96 object-cover rounded-lg">
-          </div>
+          <a class="block text-teal-600" href="#">
+            <span class="sr-only">Home</span>
+            <img src="src/img/logo.svg" class="w-28 md:w-36" alt="Home" />
+          </a>
         </div>
-        <div class="swiper-button-prev text-gray-800"></div>
-        <div class="swiper-button-next text-gray-800"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">Book a Room</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Upcoming Amenities Section -->
-  <section id="upcoming" class="py-12">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Upcoming Amenities</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="text-center">
-          <img src="https://placehold.co/800x600?text=Yoga+Shala+Stock+Image" alt="Yoga Shala" class="w-full h-64 object-cover rounded-lg mb-4">
-          <h3 class="text-2xl font-bold mb-2">Yoga Shala</h3>
-          <p class="text-lg">We are excited to announce that we are currently building a dedicated Yoga Shala for our guests. Stay tuned for yoga sessions in a tranquil environment.</p>
-        </div>
-        <div class="text-center">
-          <img src="https://placehold.co/800x600?text=Cafe+Restaurant+Stock+Image" alt="Café Restaurant" class="w-full h-64 object-cover rounded-lg mb-4">
-          <h3 class="text-2xl font-bold mb-2">Café Restaurant</h3>
-          <p class="text-lg">Coming soon: A cozy café restaurant offering delicious local and international cuisine exclusively for our guests.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#"> Rooms </a>
+            </li>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-12 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="flex flex-col justify-center">
-          <p class="mb-4"><strong>Address:</strong> [Your Resort Address], South Goa, India 403XXX</p>
-          <p class="mb-4"><strong>Phone:</strong> +91 XXX-XXXXXXX</p>
-          <p class="mb-4"><strong>Email:</strong> info@lumagoa.com</p>
+            <li>
+              <a href="#"> Yoga Shala </a>
+            </li>
+
+            <li>
+              <a href="#"> Massage </a>
+            </li>
+
+            <li>
+              <a href="#"> Contact </a>
+            </li>
+          </ul>
         </div>
-        <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.7890123456!2d73.827!3d15.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sSouth%20Goa%2C%20Goa!5e0!3m2!1sen!2sin!4v1722332287486!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div class="navbar-end">
+          <a class="btn btn-primary md:w-32">Book now</a>
         </div>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-6 flex justify-center space-x-8">
-      <a href="https://www.instagram.com/lumagoa" target="_blank" class="hover:text-gray-300 transition">Instagram</a>
-      <a href="https://www.facebook.com/lumagoa" target="_blank" class="hover:text-gray-300 transition">Facebook</a>
-    </div>
-  </footer>
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 md:pt-22">
+      <div class="relative h-96">
+        <img
+          src="https://placehold.co/1920x800?text=Full-Width+Hero+Image+of+the+Resort+in+South+Goa"
+          alt="Luma Goa Resort"
+          class="h-full w-full object-cover"
+        />
+        <div
+          class="bg-opacity-30 absolute inset-0 flex items-center justify-center bg-black"
+        >
+          <h2 class="text-center text-5xl font-bold text-white">
+            Welcome to Luma Goa
+          </h2>
+        </div>
+      </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 1,
-      spaceBetween: 20,
-    });
-  </script>
-</body>
+      <!-- Intro Description -->
+      <div class="container mx-auto px-6 py-12 text-center">
+        <p class="mx-auto max-w-2xl text-lg">
+          Nestled in the serene landscapes of South Goa, Luma Goa offers a
+          peaceful retreat with comfortable accommodations and a focus on
+          relaxation. Discover our rooms and plan your stay today.
+        </p>
+      </div>
+    </section>
+
+    <!-- Rooms Section with Carousel Gallery -->
+    <section id="rooms" class="bg-gray-50 py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-8 text-center text-3xl font-bold">Our Rooms</h2>
+        <div class="swiper relative mx-auto max-w-4xl">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="https://placehold.co/800x600?text=Room+Image+1"
+                alt="Room 1"
+                class="h-96 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://placehold.co/800x600?text=Room+Image+2"
+                alt="Room 2"
+                class="h-96 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://placehold.co/800x600?text=Room+Image+3"
+                alt="Room 3"
+                class="h-96 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://placehold.co/800x600?text=Room+Image+4"
+                alt="Room 4"
+                class="h-96 w-full rounded-lg object-cover"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://placehold.co/800x600?text=Room+Image+5"
+                alt="Room 5"
+                class="h-96 w-full rounded-lg object-cover"
+              />
+            </div>
+          </div>
+          <div class="swiper-button-prev text-gray-800"></div>
+          <div class="swiper-button-next text-gray-800"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="mt-8 text-center">
+          <a
+            href="#contact"
+            class="rounded-lg bg-blue-600 px-8 py-3 text-white transition hover:bg-blue-700"
+            >Book a Room</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Amenities Section -->
+    <section id="upcoming" class="py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-8 text-center text-3xl font-bold">Upcoming Amenities</h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="text-center">
+            <img
+              src="https://placehold.co/800x600?text=Yoga+Shala+Stock+Image"
+              alt="Yoga Shala"
+              class="mb-4 h-64 w-full rounded-lg object-cover"
+            />
+            <h3 class="mb-2 text-2xl font-bold">Yoga Shala</h3>
+            <p class="text-lg">
+              We are excited to announce that we are currently building a
+              dedicated Yoga Shala for our guests. Stay tuned for yoga sessions
+              in a tranquil environment.
+            </p>
+          </div>
+          <div class="text-center">
+            <img
+              src="https://placehold.co/800x600?text=Cafe+Restaurant+Stock+Image"
+              alt="Café Restaurant"
+              class="mb-4 h-64 w-full rounded-lg object-cover"
+            />
+            <h3 class="mb-2 text-2xl font-bold">Café Restaurant</h3>
+            <p class="text-lg">
+              Coming soon: A cozy café restaurant offering delicious local and
+              international cuisine exclusively for our guests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-50 py-12">
+      <div class="container mx-auto px-6">
+        <h2 class="mb-8 text-center text-3xl font-bold">Contact Us</h2>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="flex flex-col justify-center">
+            <p class="mb-4">
+              <strong>Address:</strong> [Your Resort Address], South Goa, India
+              403XXX
+            </p>
+            <p class="mb-4"><strong>Phone:</strong> +91 XXX-XXXXXXX</p>
+            <p class="mb-4"><strong>Email:</strong> info@lumagoa.com</p>
+          </div>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123456.7890123456!2d73.827!3d15.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sSouth%20Goa%2C%20Goa!5e0!3m2!1sen!2sin!4v1722332287486!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-white">
+      <div class="container mx-auto flex justify-center space-x-8 px-6">
+        <a
+          href="https://www.instagram.com/lumagoa"
+          target="_blank"
+          class="transition hover:text-gray-300"
+          >Instagram</a
+        >
+        <a
+          href="https://www.facebook.com/lumagoa"
+          target="_blank"
+          class="transition hover:text-gray-300"
+          >Facebook</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 1,
+        spaceBetween: 20,
+      });
+    </script>
+  </body>
 </html>
