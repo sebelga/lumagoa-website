@@ -1,3 +1,5 @@
+@import '../node_modules/photoswipe/dist/photoswipe.css';
+
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: pastel --default, dim --prefersdark;
@@ -10,3 +12,39 @@
 }
 @custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
 @plugin "@tailwindcss/typography";
+
+@layer utilities {
+  .grid-sizer,
+  .grid-item {
+    @apply w-full; /* 1 column by default */
+  }
+
+  @media (min-width: 640px) { /* sm: 2 columns */
+    .grid-sizer,
+    .grid-item {
+      @apply w-1/2;
+    }
+  }
+
+  @media (min-width: 768px) { /* md: 3 columns */
+    .grid-sizer,
+    .grid-item {
+      @apply w-[33.333%];
+    }
+  }
+
+  @media (min-width: 1024px) { /* lg: 4 columns */
+    .grid-sizer,
+    .grid-item {
+      @apply w-1/4;
+    }
+  }
+
+  .gutter-sizer {
+    @apply w-4; /* Matches Tailwind's gap-4 (1rem assuming base font 16px) */
+  }
+
+  .grid-item {
+    @apply mb-4; /* Vertical spacing between items;*/
+  }
+}
