@@ -24,7 +24,6 @@ if (!grid) {
 
   imagesLoaded(grid).on("progress", function () {
     // Re-layout Masonry after each image loads
-    console.log("Images loaded, relayout Masonry");
     msnry.layout?.();
   });
 

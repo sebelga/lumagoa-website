@@ -6,7 +6,7 @@
     <title>Luma Goa</title>
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
-  <body class="bg-white pt-16 font-sans text-gray-900 antialiased md:pt-25">
+  <body class="bg-white pt-16 text-gray-900 antialiased md:pt-25">
     <!-- Header -->
     <header class="fixed top-0 left-0 z-10 w-full bg-white shadow-sm">
       <div class="container mx-auto navbar bg-base-100 p-4 md:p-6">
@@ -43,6 +43,10 @@
                 <a href="/#upcoming"> Yoga Shala </a>
               </li>
 
+              <li>
+                <a href="/#gallery"> Gallery </a>
+              </li>
+
               <!-- <li>
                 <a href="#"> Massage </a>
               </li> -->
@@ -69,6 +73,10 @@
 
             <li>
               <a href="/#upcoming"> Yoga Shala </a>
+            </li>
+
+            <li>
+              <a href="/#gallery"> Gallery </a>
             </li>
 
             <!-- <li>
@@ -104,8 +112,8 @@
           <div
             class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right"
           >
-            <h2 class="text-5xl font-bold text-white md:text-7xl">
-              Dream Beneath the Goan Sky
+            <h2 class="font-display text-5xl font-bold text-white md:text-7xl">
+              Dream Beneath<br />the Goan Sky
             </h2>
 
             <p
@@ -136,12 +144,14 @@
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div class="rounded-box bg-primary/33 p-4 md:p-12 lg:px-16 lg:py-24">
             <div class="mx-auto max-w-xl text-center">
-              <h2 class="text-2xl font-bold md:text-3xl">Welcome to Luma!</h2>
+              <h2 class="font-display text-2xl font-bold md:text-3xl">
+                Welcome to Luma!
+              </h2>
 
               <div class="mt-4 text-base-content/90 md:mt-12">
                 <p>
                   Welcome to Luma, a tranquil retreat tucked away in the heart
-                  of South Goa. Our 9 A-Frame huts blend rustic charm with a
+                  of South Goa. Our nine A-Frame huts blend rustic charm with a
                   touch of magic—each featuring a private open-sky bathroom for
                   showering under the stars.
                 </p>
@@ -177,10 +187,14 @@
     <!-- Rooms Section with Carousel Gallery -->
     <section id="rooms" class="bg-gray-50 py-4 md:py-12">
       <div class="container mx-auto px-6">
-        <h2 class="text-1xl mb-2 text-center font-bold md:text-2xl">
+        <h2
+          class="text-1xl mb-2 text-center font-display font-bold md:text-2xl"
+        >
           Our Rooms
         </h2>
-        <h3 class="mb-8 text-center text-3xl font-bold md:mb-16 md:text-5xl">
+        <h3
+          class="mb-8 text-center font-display text-3xl font-bold md:mb-16 md:text-5xl"
+        >
           Beautiful A-Frame huts
         </h3>
 
@@ -195,11 +209,11 @@
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Private Balcony Oasis</h4>
+                <h4 class="mb-4 text-2xl font-bold">Comfort & Spaciousness</h4>
                 <p>
-                  Relax on your 9m² private balcony overlooking lush gardens.
-                  Immerse yourself in tranquility, surrounded by nature and the
-                  soothing melodies of birdsong.
+                  Our cozy 25m² interiors feature spacious comfort, a plush
+                  mattress, air conditioning, and a ceiling fan—creating your
+                  perfect retreat after a day by the beach.
                 </p>
               </div>
             </div>
@@ -218,11 +232,11 @@
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Comfort & Spaciousness</h4>
+                <h4 class="mb-4 text-2xl font-bold">Private Balcony Oasis</h4>
                 <p>
-                  Our cozy 25m² interiors feature spacious comfort, a plush
-                  mattress, air conditioning, and a ceiling fan—creating your
-                  perfect retreat after a day by the beach.
+                  Relax on your private balcony overlooking lush gardens.
+                  Immerse yourself in tranquility, surrounded by nature and the
+                  soothing melodies of birdsong.
                 </p>
               </div>
             </div>
@@ -256,7 +270,9 @@
     <!-- Upcoming Amenities Section -->
     <section id="upcoming" class="py-12">
       <div class="container mx-auto px-6">
-        <h2 class="mb-4 text-center text-3xl font-bold md:mb-8 md:text-5xl">
+        <h2
+          class="mb-4 text-center font-display text-3xl font-bold md:mb-8 md:text-5xl"
+        >
           Upcoming Amenities
         </h2>
         <p class="mb-12 text-center text-lg text-base-content/60">
@@ -270,7 +286,7 @@
               alt="Yoga Shala"
               class="mb-8 h-96 w-full rounded-lg object-cover object-top"
             />
-            <h3 class="mb-2 text-2xl font-bold">Yoga Shala</h3>
+            <h3 class="mb-2 font-display text-2xl font-bold">Yoga Shala</h3>
             <p class="text-lg">
               We are excited to announce that we are currently building a
               dedicated Yoga Shala for our guests. Stay tuned for yoga sessions
@@ -283,7 +299,9 @@
               alt="Café Restaurant"
               class="mb-8 h-96 w-full rounded-lg object-cover"
             />
-            <h3 class="mb-2 text-2xl font-bold">Café Restaurant</h3>
+            <h3 class="mb-2 font-display text-2xl font-bold">
+              Café Restaurant
+            </h3>
             <p class="text-lg">
               We are excited to announce the construction of Roots and Bloom,
               our vegan and vegetarian café, located right next to Luma Goa.
@@ -296,9 +314,16 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-12">
+    <section id="gallery" class="bg-gray-900 py-12 text-white">
       <div class="container mx-auto px-6">
-        <h2 class="mb-4 text-center text-3xl font-bold md:mb-12 md:text-5xl">
+        <h2
+          class="text-1xl mb-2 text-center font-display font-bold md:text-2xl"
+        >
+          Photos
+        </h2>
+        <h2
+          class="mb-4 text-center font-display text-3xl font-bold md:mb-12 md:text-5xl"
+        >
           Luma Gallery
         </h2>
       </div>
@@ -492,7 +517,9 @@
     <!-- Contact Section -->
     <section id="contact" class="bg-gray-50 py-4 md:py-12">
       <div class="container mx-auto px-6">
-        <h2 class="mb-8 text-center text-3xl font-bold md:text-5xl">
+        <h2
+          class="mb-8 text-center font-display text-3xl font-bold md:text-5xl"
+        >
           Contact Us
         </h2>
 
@@ -505,7 +532,9 @@
             <p class="mb-4"><strong>Phone:</strong> +91 808 772 34 55</p>
             <p class="mb-12"><strong>Email:</strong> info@lumagoa.com</p>
 
-            <h3 class="mb-2 text-lg font-bold">Discover Palolem and Beyond</h3>
+            <h3 class="mb-2 font-display text-lg font-bold">
+              Discover Palolem and Beyond
+            </h3>
             <p class="text-base-content/60">
               Our resort is just steps away from the picturesque Palolem
               Beach—known for its calm waters, stunning sunsets, and friendly
