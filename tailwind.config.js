@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{html,js,ts}"], // Optional: Explicit paths if auto-detection isn't sufficient
+  content: [
+    "./src/pages/index.ejs",
+    "./src/pages/terms-and-services.ejs",
+    "./src/partials/**/*.{html,js,ts, ejs}",
+    "./src/**/*.{html,js,ts,ejs}",
+  ], // Optional: Explicit paths if auto-detection isn't sufficient
   theme: {
     extend: {
       fontFamily: {

@@ -2,10 +2,11 @@
   "name": "lumagoa-website",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ejs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "generate-gallery-metadata": "python3 ./scripts/image_metadata.py $PWD/public/img/gallery/large $PWD/public --output ./public/gallery-img-metadata.json",
     "preview": "vite preview"
   },
   "keywords": [],
@@ -15,13 +16,15 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
+    "@types/google.maps": "^3.58.1",
     "@types/imagesloaded": "^4.1.7",
     "@types/masonry-layout": "^4.2.8",
     "daisyui": "^5.0.50",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4.1.11",
-    "vite": "^7.0.6"
+    "vite": "^7.0.6",
+    "vite-plugin-virtual-mpa": "^1.12.1"
   },
   "dependencies": {
     "imagesloaded": "^5.0.0",

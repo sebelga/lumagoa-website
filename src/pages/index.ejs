@@ -1,104 +1,9 @@
 <!doctype html>
 <html lang="en" data-theme="pastel">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luma Goa</title>
-    <link rel="stylesheet" href="/src/styles.css" />
-  </head>
+  <%- include('./src/partials/head.ejs', { title: 'Luma Goa', description: 'Welcome to Luma Goa, a tranquil retreat tucked away in the heart of South Goa.' }) %>
   <body class="bg-white pt-16 text-gray-900 antialiased md:pt-25">
     <!-- Header -->
-    <header class="fixed top-0 left-0 z-10 w-full bg-white shadow-sm">
-      <div class="container mx-auto navbar bg-base-100 p-4 md:p-6">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="pr-2 lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="dropdown-content menu z-1 mt-3 w-52 menu-sm rounded-box bg-base-100 p-2 shadow"
-            >
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="/#rooms"> Rooms </a>
-              </li>
-
-              <li>
-                <a href="/#upcoming"> Yoga Shala </a>
-              </li>
-
-              <li>
-                <a href="/#gallery"> Gallery </a>
-              </li>
-
-              <!-- <li>
-                <a href="#"> Massage </a>
-              </li> -->
-
-              <li>
-                <a href="/#contact"> Contact </a>
-              </li>
-            </ul>
-          </div>
-          <a class="block lg:-ml-[6px]" href="/">
-            <span class="sr-only">Home</span>
-            <img src="/img/logo.svg" class="w-28 md:w-36" alt="Home" />
-          </a>
-        </div>
-
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/#rooms"> Rooms </a>
-            </li>
-
-            <li>
-              <a href="/#upcoming"> Yoga Shala </a>
-            </li>
-
-            <li>
-              <a href="/#gallery"> Gallery </a>
-            </li>
-
-            <!-- <li>
-                <a href="#"> Massage </a>
-              </li> -->
-
-            <li>
-              <a href="/#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="navbar-end">
-          <a
-            class="btn btn-primary md:w-32"
-            href="https://bookingengine.stayflexi.com/?hotel_id=31402"
-            target="_blank"
-            >Book now</a
-          >
-        </div>
-      </div>
-    </header>
+    <%- include('./src/partials/header.ejs') %>
 
     <!-- Hero Section -->
     <section
@@ -108,7 +13,7 @@
       <div
         class="flex h-full items-center bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24"
       >
-        <div class="container mx-auto px-4 md:px-6">
+        <div class="px-4 md:px-6 lg:container lg:mx-auto">
           <div
             class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right"
           >
@@ -140,9 +45,9 @@
 
     <!-- Welcome Section -->
     <section id="welcome" class="my-4 md:my-12">
-      <div class="container mx-auto px-4 md:px-6">
+      <div class="px-4 md:px-6 lg:container lg:mx-auto">
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div class="rounded-box bg-primary/33 p-4 md:p-12 lg:px-16 lg:py-24">
+          <div class="rounded-box bg-secondary p-4 md:p-12 lg:px-16 lg:py-24">
             <div class="mx-auto max-w-xl text-center">
               <h2 class="font-display text-2xl font-bold md:text-3xl">
                 Welcome to Luma!
@@ -167,17 +72,17 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
+          <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <img
               alt=""
               src="/img/hut-1.jpeg"
-              class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full"
+              class="hidden h-40 w-full rounded-box object-cover sm:h-56 md:block md:h-full"
             />
 
             <img
               alt=""
               src="/img/gabrielle-maurer-hv1M-3MI80s-unsplash.jpg"
-              class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full"
+              class="h-40 w-full rounded-box object-cover sm:h-56 md:hidden lg:block lg:h-full"
             />
           </div>
         </div>
@@ -186,7 +91,7 @@
 
     <!-- Rooms Section with Carousel Gallery -->
     <section id="rooms" class="bg-gray-50 py-4 md:py-12">
-      <div class="container mx-auto px-6">
+      <div class="px-6 lg:container lg:mx-auto">
         <h2
           class="text-1xl mb-2 text-center font-display font-bold md:text-2xl"
         >
@@ -198,7 +103,7 @@
           Beautiful A-Frame huts
         </h3>
 
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div class="p-4">
             <img
               alt=""
@@ -209,7 +114,9 @@
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Comfort & Spaciousness</h4>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Comfort & Spaciousness
+                </h4>
                 <p>
                   Our cozy 25m² interiors feature spacious comfort, a plush
                   mattress, air conditioning, and a ceiling fan—creating your
@@ -224,15 +131,21 @@
               src="/img/room-2.jpeg"
               class="mb-4 w-full rounded-box"
             />
-            <img alt="" src="/img/room-3.jpeg" class="w-full rounded-box" />
+            <img
+              alt=""
+              src="/img/room-3.jpeg"
+              class="hidden w-full rounded-box lg:block"
+            />
           </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Private Balcony Oasis</h4>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Private Balcony Oasis
+                </h4>
                 <p>
                   Relax on your private balcony overlooking lush gardens.
                   Immerse yourself in tranquility, surrounded by nature and the
@@ -250,7 +163,9 @@
           </div>
           <div class="p-4">
             <div class="mb-8">
-              <h4 class="mb-4 text-2xl font-bold">Open-Sky Serenity</h4>
+              <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                Open-Sky Serenity
+              </h4>
               <p>
                 Refresh under a private open-sky bathroom, blending nature with
                 luxury as you shower beneath Goa’s sunlit skies or starry
@@ -269,7 +184,7 @@
 
     <!-- Upcoming Amenities Section -->
     <section id="upcoming" class="py-12">
-      <div class="container mx-auto px-6">
+      <div class="px-6 lg:container lg:mx-auto">
         <h2
           class="mb-4 text-center font-display text-3xl font-bold md:mb-8 md:text-5xl"
         >
@@ -314,8 +229,8 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="bg-gray-900 py-12 text-white">
-      <div class="container mx-auto px-6">
+    <section id="gallery" class="bg-base-100 py-12 text-white" data-theme="dim">
+      <div class="px-6 lg:container lg:mx-auto">
         <h2
           class="text-1xl mb-2 text-center font-display font-bold md:text-2xl"
         >
@@ -338,8 +253,6 @@
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/01.jpg"
-              data-pswp-width="1280"
-              data-pswp-height="581"
               data-cropped="true"
               target="_blank"
             >
@@ -354,8 +267,6 @@
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/13.jpg"
-              data-pswp-width="1438"
-              data-pswp-height="1080"
               data-cropped="true"
               target="_blank"
             >
@@ -370,8 +281,6 @@
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/03.jpg"
-              data-pswp-width="811"
-              data-pswp-height="1080"
               data-cropped="true"
               target="_blank"
             >
@@ -385,41 +294,7 @@
           <div class="grid-item rounded-lg p-2">
             <a
               class="h-full w-full overflow-hidden"
-              href="/img/gallery/large/07.jpg"
-              data-pswp-width="1280"
-              data-pswp-height="960"
-              data-cropped="true"
-              target="_blank"
-            >
-              <img
-                class="gallery-thumb h-auto w-full rounded-lg object-cover"
-                src="/img/gallery/524/07.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="grid-item rounded-lg p-2">
-            <a
-              class="h-full w-full overflow-hidden"
-              href="/img/gallery/large/06.jpg"
-              data-pswp-width="960"
-              data-pswp-height="1280"
-              data-cropped="true"
-              target="_blank"
-            >
-              <img
-                class="gallery-thumb h-auto w-full rounded-lg object-cover"
-                src="/img/gallery/524/06.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="grid-item rounded-lg p-2">
-            <a
-              class="h-full w-full overflow-hidden"
               href="/img/gallery/large/04.jpg"
-              data-pswp-width="1280"
-              data-pswp-height="677"
               data-cropped="true"
               target="_blank"
             >
@@ -433,9 +308,49 @@
           <div class="grid-item rounded-lg p-2">
             <a
               class="h-full w-full overflow-hidden"
+              href="/img/gallery/large/07.jpg"
+              data-cropped="true"
+              target="_blank"
+            >
+              <img
+                class="gallery-thumb h-auto w-full rounded-lg object-cover"
+                src="/img/gallery/524/07.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a
+              class="h-full w-full overflow-hidden"
+              href="/img/gallery/large/06.jpg"
+              data-cropped="true"
+              target="_blank"
+            >
+              <img
+                class="gallery-thumb h-auto w-full rounded-lg object-cover"
+                src="/img/gallery/524/06.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a
+              class="h-full w-full overflow-hidden"
+              href="/img/gallery/large/08.jpg"
+              data-cropped="true"
+              target="_blank"
+            >
+              <img
+                class="gallery-thumb h-auto w-full rounded-lg object-cover"
+                src="/img/gallery/524/08.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a
+              class="h-full w-full overflow-hidden"
               href="/img/gallery/large/09.jpg"
-              data-pswp-width="960"
-              data-pswp-height="1280"
               data-cropped="true"
               target="_blank"
             >
@@ -446,12 +361,10 @@
               />
             </a>
           </div>
-          <div class="grid-item rounded-lg p-2">
+          <div class="grid-item hidden rounded-lg p-2 md:block">
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/11.jpg"
-              data-pswp-width="1280"
-              data-pswp-height="960"
               data-cropped="true"
               target="_blank"
             >
@@ -462,12 +375,10 @@
               />
             </a>
           </div>
-          <div class="grid-item rounded-lg p-2">
+          <div class="grid-item hidden rounded-lg p-2 md:block">
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/12.jpg"
-              data-pswp-width="960"
-              data-pswp-height="1280"
               data-cropped="true"
               target="_blank"
             >
@@ -478,12 +389,10 @@
               />
             </a>
           </div>
-          <div class="grid-item rounded-lg p-2">
+          <div class="grid-item hidden rounded-lg p-2 md:block">
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/05.jpg"
-              data-pswp-width="960"
-              data-pswp-height="1280"
               data-cropped="true"
               target="_blank"
             >
@@ -494,12 +403,10 @@
               />
             </a>
           </div>
-          <div class="grid-item rounded-lg p-2">
+          <div class="grid-item hidden rounded-lg p-2 md:block">
             <a
               class="h-full w-full overflow-hidden"
               href="/img/gallery/large/14.jpg"
-              data-pswp-width="1600"
-              data-pswp-height="1066"
               data-cropped="true"
               target="_blank"
             >
@@ -515,8 +422,8 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-50 py-4 md:py-12">
-      <div class="container mx-auto px-6">
+    <section id="contact" class="bg-gray-50 py-4 py-12">
+      <div class="px-6 lg:container lg:mx-auto">
         <h2
           class="mb-8 text-center font-display text-3xl font-bold md:text-5xl"
         >
@@ -524,13 +431,34 @@
         </h2>
 
         <div class="flex flex-col md:flex-row">
-          <div class="p-4 md:w-1/3">
+          <div class="py-4 pr-4 md:w-1/3">
             <p class="mb-4">
               <strong>Address:</strong> Palolem Down St, Palolem, Canacona,
               South Goa 403702, India
             </p>
-            <p class="mb-4"><strong>Phone:</strong> +91 808 772 34 55</p>
-            <p class="mb-12"><strong>Email:</strong> info@lumagoa.com</p>
+            <p class="mb-4">
+              <strong>Phone:</strong>
+              <a href="tel:+918087723455">+91 808 772 34 55</a>
+            </p>
+            <p class="mb-12">
+              <strong>Email:</strong>
+              <script>
+                var user = "info";
+                var domain = "lumagoa.com";
+                document.write(
+                  '<a href="mailto:' +
+                    user +
+                    "@" +
+                    domain +
+                    '">' +
+                    user +
+                    "@" +
+                    domain +
+                    "</a>",
+                );
+              </script>
+              <noscript>Enable JavaScript to view email address.</noscript>
+            </p>
 
             <h3 class="mb-2 font-display text-lg font-bold">
               Discover Palolem and Beyond
@@ -545,7 +473,7 @@
             </p>
           </div>
 
-          <div class="p-4 md:w-2/3">
+          <div class="py-4 md:w-2/3 md:pl-4">
             <div id="map" style="height: 400px; width: 100%"></div>
           </div>
         </div>
@@ -553,120 +481,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-100">
-      <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="flex justify-center text-teal-600">
-          <img src="/img/logo-square.svg" class="w-28 md:w-36" alt="Home" />
-        </div>
-
-        <p
-          class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500"
-        >
-          "All our dreams can come true, if we have the courage to pursue them."
-          - Walt Disney
-        </p>
-
-        <ul class="mt-12 flex justify-center gap-6 md:gap-8">
-          <li>
-            <a
-              href="https://www.facebook.com/lumagoa"
-              rel="noreferrer"
-              target="_blank"
-              class="text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Facebook</span>
-              <svg
-                class="size-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.instagram.com/luma.goa"
-              rel="noreferrer"
-              target="_blank"
-              class="text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Instagram</span>
-              <svg
-                class="size-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-
-        <p
-          class="mx-auto mt-6 max-w-md text-center text-sm leading-relaxed text-gray-500"
-        >
-          © 2025 Made with 🤍 in Goa |
-          <a href="/terms-and-services">Terms and services</a>
-        </p>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      const swiper = new Swiper(".swiper", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        slidesPerView: 1,
-        spaceBetween: 20,
-      });
-    </script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMs_QCrAi4FicxfDdEX6m-rsp-ItkqVH4&callback=initMap"
-    ></script>
-    <script>
-      function initMap() {
-        // Define the map options
-        const mapOptions = {
-          center: { lat: 15.0128486, lng: 74.0201883 },
-          zoom: 14, // Zoom level: 14 shows a local area view
-          mapTypeId: "satellite", // Optional: 'roadmap' (default), 'satellite', 'hybrid', or 'terrain'
-        };
-
-        // Create the map and attach it to the <div id="map">
-        const map = new google.maps.Map(
-          document.getElementById("map"),
-          mapOptions,
-        );
-
-        // Optional: Add a marker for your resort location
-        const marker = new google.maps.Marker({
-          position: { lat: 15.0128486, lng: 74.0201883 },
-          map: map,
-          title: "Luma Goa", // Tooltip on hover
-        });
-      }
-    </script>
+    <%- include('./src/partials/footer.ejs') %>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
