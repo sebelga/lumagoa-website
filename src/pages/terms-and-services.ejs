@@ -1,19 +1,9 @@
 <!doctype html>
 <html lang="en" data-theme="pastel">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luma Goa</title>
-    <link rel="stylesheet" href="/src/styles.css" />
-    <!-- Link to Tailwind CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-  </head>
+  <%- include('./src/partials/head.ejs', { title: 'Terms and Services: Luma', description: 'Review the terms and conditions for your stay at Luma Goa.' }) %>
   <body class="bg-white pt-25 font-sans text-gray-900 antialiased md:pt-25">
     <!-- Header -->
-    <%- include('./src/partials/header.html') %>
+    <%- include('./src/partials/header.ejs') %>
 
     <section>
       <div class="container mx-auto px-4 py-4 md:px-6 md:py-16">
@@ -153,6 +143,6 @@
     </section>
 
     <!-- Footer -->
-    <%- include('./src/partials/footer.html') %>
+    <%- include('./src/partials/footer.ejs') %>
   </body>
 </html>

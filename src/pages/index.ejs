@@ -1,14 +1,9 @@
 <!doctype html>
 <html lang="en" data-theme="pastel">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luma Goa</title>
-    <link rel="stylesheet" href="/src/styles.css" />
-  </head>
+  <%- include('./src/partials/head.ejs', { title: 'Luma Goa', description: 'Welcome to Luma Goa, a tranquil retreat tucked away in the heart of South Goa.' }) %>
   <body class="bg-white pt-16 text-gray-900 antialiased md:pt-25">
     <!-- Header -->
-    <%- include('./src/partials/header.html') %>
+    <%- include('./src/partials/header.ejs') %>
 
     <!-- Hero Section -->
     <section
@@ -486,7 +481,7 @@
     </section>
 
     <!-- Footer -->
-    <%- include('./src/partials/footer.html') %>
+    <%- include('./src/partials/footer.ejs') %>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
