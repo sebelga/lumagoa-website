@@ -16,8 +16,6 @@ export async function addPswpAttributes() {
     }
     const metadata: Metadata = await response.json();
 
-    console.log("PhotoSwipe metadata:", metadata);
-
     const links = document.querySelectorAll<HTMLAnchorElement>(
       "#masonry-grid .grid-item a",
     );
