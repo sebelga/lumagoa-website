@@ -8,7 +8,7 @@
 @plugin "daisyui/theme" {
   name: "pastel";
   default: true;
-  --color-primary: #c28a78ff;
+  --color-primary: #c66f54;
   --color-primary-content: #fff;
 }
 @custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
