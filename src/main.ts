@@ -2,6 +2,7 @@ import PhotoSwipeLightbox from "photoswipe/lightbox";
 import Masonry from "masonry-layout";
 import imagesLoaded from "imagesloaded";
 import { googleMap } from "./google_map";
+import { addPswpAttributes } from "./gallery_img_metadata";
 
 function gallery() {
   const lightbox = new PhotoSwipeLightbox({
@@ -39,6 +40,7 @@ function masonry() {
 }
 
 (function init() {
+  addPswpAttributes();
   gallery();
   masonry();
   googleMap();

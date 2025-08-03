@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "generate-gallery-metadata": "python3 ./scripts/image_metadata.py $PWD/public/img/gallery/large $PWD/public --output ./public/gallery-img-metadata.json",
     "preview": "vite preview"
   },
   "keywords": [],
