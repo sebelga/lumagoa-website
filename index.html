@@ -30,7 +30,7 @@
             </div>
             <ul
               tabindex="0"
-              class="dropdown-content menu z-1 mt-3 w-52 menu-sm rounded-box bg-base-100 p-2 shadow"
+              class="dropdown-content menu z-1 mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
             >
               <li>
                 <a href="#">Home</a>
@@ -198,7 +198,7 @@
           Beautiful A-Frame huts
         </h3>
 
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div class="p-4">
             <img
               alt=""
@@ -209,7 +209,9 @@
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Comfort & Spaciousness</h4>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Comfort & Spaciousness
+                </h4>
                 <p>
                   Our cozy 25m² interiors feature spacious comfort, a plush
                   mattress, air conditioning, and a ceiling fan—creating your
@@ -224,15 +226,21 @@
               src="/img/room-2.jpeg"
               class="mb-4 w-full rounded-box"
             />
-            <img alt="" src="/img/room-3.jpeg" class="w-full rounded-box" />
+            <img
+              alt=""
+              src="/img/room-3.jpeg"
+              class="hidden w-full rounded-box lg:block"
+            />
           </div>
         </div>
 
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div class="p-4">
             <div class="flex h-full items-center text-center">
               <div>
-                <h4 class="mb-4 text-2xl font-bold">Private Balcony Oasis</h4>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Private Balcony Oasis
+                </h4>
                 <p>
                   Relax on your private balcony overlooking lush gardens.
                   Immerse yourself in tranquility, surrounded by nature and the
@@ -250,7 +258,9 @@
           </div>
           <div class="p-4">
             <div class="mb-8">
-              <h4 class="mb-4 text-2xl font-bold">Open-Sky Serenity</h4>
+              <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                Open-Sky Serenity
+              </h4>
               <p>
                 Refresh under a private open-sky bathroom, blending nature with
                 luxury as you shower beneath Goa’s sunlit skies or starry
@@ -385,22 +395,6 @@
           <div class="grid-item rounded-lg p-2">
             <a
               class="h-full w-full overflow-hidden"
-              href="/img/gallery/large/07.jpg"
-              data-pswp-width="1280"
-              data-pswp-height="960"
-              data-cropped="true"
-              target="_blank"
-            >
-              <img
-                class="gallery-thumb h-auto w-full rounded-lg object-cover"
-                src="/img/gallery/524/07.jpg"
-                alt=""
-              />
-            </a>
-          </div>
-          <div class="grid-item rounded-lg p-2">
-            <a
-              class="h-full w-full overflow-hidden"
               href="/img/gallery/large/04.jpg"
               data-pswp-width="1280"
               data-pswp-height="677"
@@ -414,6 +408,23 @@
               />
             </a>
           </div>
+          <div class="grid-item rounded-lg p-2">
+            <a
+              class="h-full w-full overflow-hidden"
+              href="/img/gallery/large/07.jpg"
+              data-pswp-width="1280"
+              data-pswp-height="960"
+              data-cropped="true"
+              target="_blank"
+            >
+              <img
+                class="gallery-thumb h-auto w-full rounded-lg object-cover"
+                src="/img/gallery/524/07.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+
           <div class="grid-item hidden rounded-lg p-2 md:block">
             <a
               class="h-full w-full overflow-hidden"
@@ -515,7 +526,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-gray-50 py-4 md:py-12">
+    <section id="contact" class="bg-gray-50 py-4 py-12">
       <div class="px-6 lg:container lg:mx-auto">
         <h2
           class="mb-8 text-center font-display text-3xl font-bold md:text-5xl"
@@ -566,7 +577,7 @@
             </p>
           </div>
 
-          <div class="py-4 pl-4 md:w-2/3">
+          <div class="py-4 md:w-2/3 md:pl-4">
             <div id="map" style="height: 400px; width: 100%"></div>
           </div>
         </div>
