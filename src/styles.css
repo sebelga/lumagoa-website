@@ -11,6 +11,12 @@
   --color-primary: #c66f54;
   --color-primary-content: #fff;
 }
+
+@plugin "daisyui/theme" {
+  name: "dim";
+  --color-base-100: #281611;
+}
+
 @custom-variant dark (&:where([data-theme=dim], [data-theme=dim] *));
 @plugin "@tailwindcss/typography";
 
