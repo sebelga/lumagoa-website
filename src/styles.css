@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@600;700&display=swap');
-@import '../node_modules/photoswipe/dist/photoswipe.css';
+@import url("https://fonts.googleapis.com/css2?family=Libertinus+Serif:wght@600;700&display=swap");
+@import "../node_modules/photoswipe/dist/photoswipe.css";
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: pastel --default, dim --prefersdark;
+  themes:
+    pastel --default,
+    dim --prefersdark;
 }
 @plugin "daisyui/theme" {
   name: "pastel";
@@ -23,7 +25,16 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-display: "Libertinus Serif", serif;  /* For headings */
+  --font-display: "Libertinus Serif", serif; /* For headings */
+}
+
+@layer base {
+  a {
+    @apply no-underline; /* Ensures no underline by default */
+  }
+  a:hover {
+    @apply underline; /* Applies underline on hover */
+  }
 }
 
 @layer utilities {
@@ -32,21 +43,24 @@
     @apply w-full; /* 1 column by default */
   }
 
-  @media (min-width: 640px) { /* sm: 2 columns */
+  @media (min-width: 640px) {
+    /* sm: 2 columns */
     .grid-sizer,
     .grid-item {
       @apply w-1/2;
     }
   }
 
-  @media (min-width: 768px) { /* md: 3 columns */
+  @media (min-width: 768px) {
+    /* md: 3 columns */
     .grid-sizer,
     .grid-item {
       @apply w-[33.333%];
     }
   }
 
-  @media (min-width: 1024px) { /* lg: 4 columns */
+  @media (min-width: 1024px) {
+    /* lg: 4 columns */
     .grid-sizer,
     .grid-item {
       @apply w-1/4;
