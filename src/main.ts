@@ -3,6 +3,7 @@ import Masonry from "masonry-layout";
 import imagesLoaded from "imagesloaded";
 import { googleMap } from "./google_map";
 import { addPswpAttributes } from "./gallery_img_metadata";
+import { updateDailyQuote } from "./daily_quote";
 
 function gallery() {
   const lightbox = new PhotoSwipeLightbox({
@@ -44,4 +45,5 @@ function masonry() {
   gallery();
   masonry();
   googleMap();
+  updateDailyQuote();
 })();
