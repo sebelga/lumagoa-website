@@ -30,6 +30,18 @@ export default defineConfig({
         },
       ],
       htmlMinify: true,
+      watchOptions: {
+        include: "**/*.ejs", // Watch all .ejs files in the project
+        handler: ({ server, file, type }) => {
+          if (type === "change" && file.endsWith(".ejs")) {
+            console.log(`EJS template changed: ${file}. Triggering reload.`);
+            server.ws.send({
+              type: "full-reload",
+              path: "*",
+            });
+          }
+        },
+      },
     }),
     tailwindcss({ config: "./tailwind.config.js" }),
   ],
