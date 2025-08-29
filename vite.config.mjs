@@ -24,6 +24,11 @@ export default defineConfig({
           filename: "index.html",
         },
         {
+          name: "booking",
+          template: resolve(__dirname, "src/pages/booking.ejs"),
+          filename: "booking.html",
+        },
+        {
           name: "terms-and-services",
           template: resolve(__dirname, "src/pages/terms-and-services.ejs"),
           filename: "terms-and-services.html",
