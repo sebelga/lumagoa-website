@@ -454,18 +454,11 @@
             <p class="mb-12">
               <strong>Email: </strong>
               <script>
-                var user = "info";
+                var user = "contact";
                 var domain = "lumagoa.com";
+                var email = user + "@" + domain;
                 document.write(
-                  '<a href="mailto:' +
-                    user +
-                    "@" +
-                    domain +
-                    '">' +
-                    user +
-                    "@" +
-                    domain +
-                    "</a>",
+                  '<a href="mailto:' + email + '">' + email + "</a>",
                 );
               </script>
               <noscript>Enable JavaScript to view email address.</noscript>
