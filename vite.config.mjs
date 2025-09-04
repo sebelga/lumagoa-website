@@ -33,6 +33,11 @@ export default defineConfig({
           template: resolve(__dirname, "src/pages/terms-and-services.ejs"),
           filename: "terms-and-services.html",
         },
+        {
+          name: "privacy-policy",
+          template: resolve(__dirname, "src/pages/privacy-policy.ejs"),
+          filename: "privacy-policy.html",
+        },
       ],
       htmlMinify: true,
       watchOptions: {
