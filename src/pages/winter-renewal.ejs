@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en" data-theme="pastel">
+<%- include('./src/partials/head.ejs', { title: 'Luma Goa Enhanced Rooms: 15% Off Winter 2025 Promo', description: 'Discover Luma Goa\'s 2025 renewal: enhanced huts with enclosed bathrooms, insulation, and decor, plus new yoga shala and café. Enjoy 15% off Dec-Jan stays with code LUMA25RENEW—book by Nov 30 for serene South Goa escapes.' }) %>
+
+<body class="bg-white pt-16 text-gray-900 antialiased md:pt-25">
+  <!-- Header -->
+  <%- include('./src/partials/header.ejs') %>
+  <!-- Hero Section: Creative Split with Floating Elements -->
+  <section id="winter-hero" class="relative min-h-[70vh] overflow-hidden bg-gradient-to-br from-secondary/20 via-base-100/10 to-primary/5 md:min-h-[85vh]">
+    <!-- Background Image: Subtle, layered for depth -->
+    <div class="absolute inset-0 opacity-12">
+      <img src="/img/hero-bg-winter-renewal.webp" alt="Goan sunset silhouette" class="h-full w-full object-cover" />
+    </div>
+
+
+    <div class="relative flex h-full flex-col items-center justify-center px-4 py-12 md:flex-row md:py-12 lg:px-16">
+      <!-- Left: Text Column with Staggered Entrance -->
+      <div class="mb-8 w-full text-center md:mb-0 md:w-1/2 md:text-left lg:max-w-lgxxx px-12">
+        <div class="animate-fade-in-up">
+          <span class="inline-block rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-content md:text-base">
+            New for 2025: Reimagined Renewal
+          </span>
+        </div>
+        <h1 class="mt-4 font-display text-4xl font-bold text-base-content md:mt-6 md:text-6xl lg:text-7xl">
+          Luma,<br />
+          <span class="text-primary">Renewed</span>
+        </h1>
+        <p class="mt-4 text-base text-base-content/80 md:mt-6 md:text-lg md:leading-relaxed">
+          We've heard you loud and clear from last season—your stories and suggestions stuck with us. So, during our quiet off-months, our small team rolled up our sleeves and poured heart into Luma, making it even cozier for your next escape to South Goa's golden shores.
+        </p>
+        <p class="mt-2 text-sm text-base-content/60 md:text-base">
+          To celebrate our renewal and share all the goodness with you, we're offering a 15% discount on December and January stays.</p>
+        <p class="mt-2 text-sm text-base-content/60 md:text-base">Book by Nov 30 using the promo code <strong>LUMA25RENEW</strong>—your spot in the serenity is waiting!
+        </p>
+        <div class="mt-6 flex flex-col items-center gap-3 md:flex-row md:items-center">
+          <a href="/booking" target="_blank" class="btn btn-primary w-full max-w-xs md:w-auto">
+            Claim Your Renewal
+          </a>
+          <span class="text-xs text-base-content md:text-sm">
+            Code: LUMA25RENEW
+          </span>
+        </div>
+        <p class="mt-2 text-xs text-base-content/50 md:text-sm">
+          Valid for stays Dec 1-Jan 31. Direct bookings only.
+        </p>
+      </div>
+
+      <!-- Right: Image Column with Subtle Overlay & Teaser -->
+      <div class="relative w-full md:w-1/2 lg:max-w-lg">
+        <div class="relative h-64 overflow-hidden rounded-2xl shadow-2xl md:h-96 lg:h-3/4">
+          <img src="/img/luma_flower_hut.jpg" alt="Cozy A-frame hut at Luma Goa, now enhanced for winter serenity" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+          <!-- Teaser Overlay: "Before" with arrow to "After" vibe -->
+          <div class="absolute bottom-4 left-4 right-4 p-3 backdrop-blur-sm md:left-auto md:right-0 md:w-48 md:p-0">
+            <div class="flex items-center space-x-2 rounded-lg p-2 text-sm text-white  md:p-0">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span>Same cozy A-frame hut... enhanced :)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discover What's New Section -->
+  <section id="discover-new" class="py-12 bg-base-100 md:py-24">
+    <div class="px-4 md:px-6 lg:container lg:mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="font-display text-3xl font-bold text-base-content md:text-5xl">
+          Discover What's New:<br />
+          <span class="text-primary">Our Season of Renewal</span>
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-base text-base-content/70 md:text-lg">
+          Inspired by your feedback, we've handcrafted these upgrades to elevate your stay—turning Luma into an even warmer welcome to South Goa's magic.<br />Peek into the fresh vibes below.
+        </p>
+      </div>
+
+      <!-- Image Grid: 4x2 Squares on Large Screens (Responsive: 1-col mobile, 2-col tablet, 4-col desktop) -->
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-4 mb-12">
+        <!-- Reuse gallery images, cropped square via object-cover; add alt text tying to renewal theme -->
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/kitchen.jpg" alt="Construction of the new kitchen at Luma Goa during winter renewal" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/path.jpg" alt="Pathway improvements during Luma Goa's winter renewal project" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/pole_cafe.jpg" alt="Erecting structural poles for the new café at Luma Goa" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/yoga_shala.jpg" alt="Building the open pavilion for the new yoga shala at Luma Goa" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/welder_stairs.jpg" alt="Welding metal stairs to our yoga shala during Luma Goa's renewal" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/tiles_cafe.jpg" alt="Laying tiles for the floor of the new café at Luma Goa" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/carpenter.jpg" alt="Carpenter working on wooden details for Luma Goa's renewed huts" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+        <div class="aspect-square overflow-hidden rounded-2xl shadow-lg">
+          <img src="/img/construction-renewal-luma/roof_cafe.jpg" alt="Constructing the thatched roof for the new café at Luma Goa" class="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+        </div>
+      </div>
+
+      <!-- Improvements Cards: 1-col mobile, 2-col tablet, 3-col lg+ for even flow with 7 cards -->
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <!-- Card 1: Enclosed Bathrooms -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7M5 19V9M12 19V9M19 19V9M5 19h14" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Private Bathroom Sanctuaries</h3>
+          <p class="text-base-content/80 text-sm">We've gently enclosed our bathrooms with beautiful glass for a more pleasant experience, while keeping the outdoor shower for those magical "nights under the stars" moments. 🌟😌</p>
+        </div>
+
+        <!-- Card 2: Roof Insulation -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Whisper-Quiet Roof Insulation</h3>
+          <p class="text-base-content/80 text-sm">We've added gentle insulation to our A-frame roofs, keeping rooms comfortably cool amid Goa's warm embrace. 🌿✨</p>
+        </div>
+
+        <!-- Card 3: Improved Decor -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Artisanal Decor Refresh</h3>
+          <p class="text-base-content/80 text-sm">We've sprinkled our rooms with thoughtful little details and upgraded decor, inviting a cozy, joyful feel in every corner. 🌸😊</p>
+        </div>
+
+        <!-- Card 4: Yoga Shala -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Breezy New Yoga Shala</h3>
+          <p class="text-base-content/80 text-sm">We've created a beautiful outdoor yoga shala, a peaceful spot to greet the day feeling refreshed and calmly centered. 🧘‍♀️🌅</p>
+        </div>
+
+        <!-- Card 5: Massage Area -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Serene Massage Haven</h3>
+          <p class="text-base-content/80 text-sm">We've crafted a tranquil massage area, a gentle invitation to unwind and fully relax after your beachside adventures. 💆‍♀️😌</p>
+        </div>
+
+        <!-- Card 6: Blackout Curtains -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Blackout Curtains for Deep Sleep</h3>
+          <p class="text-base-content/80 text-sm">We've fitted every room with soft blackout curtains, ensuring the sweetest, most restorative rest during your Luma stay. 🌙😴</p>
+        </div>
+
+        <!-- Card 7: Café Restaurant -->
+        <div class="rounded-2xl bg-secondary/50 p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="mx-auto mb-4 h-12 w-12 text-primary">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-bold text-base-content mb-2">Vegan & Vegetarian Café</h3>
+          <p class="text-base-content/80 text-sm">We've opened a cozy café steps from Luma, serving up delicious, plant-based and vegetarian delights to nourish your days with simple joy. 🥗🌱</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Winter's Gentle Call: Your Exclusive Offer Section -->
+  <section id="winter-offer" class="py-16 bg-gradient-to-r from-primary/10 via-secondary/20 to-primary/10 md:py-24">
+    <div class="px-4 md:px-6 lg:container lg:mx-auto">
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="font-display text-3xl font-bold text-base-content md:text-5xl">
+          Winter's Gentle Call:<br />
+          <span class="text-primary">Your Exclusive Offer</span>
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-base text-base-content/70 md:text-lg">
+          Ready to step into our renewed world? We've saved these upgrades just for you—now with savings to make the magic even sweeter.
+        </p>
+      </div>
+
+      <div class="bg-base-100 rounded-3xl p-8 md:p-12 lg:max-w-4xl lg:mx-auto shadow-2xl">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 items-center">
+          <!-- Left: Offer Details -->
+          <div class="space-y-4 text-center md:text-left">
+            <div class="inline-block px-6 py-3 font-bold text-lg md:text-xl">
+              15% Off Your Reimagined Retreat
+            </div>
+            <ul class="space-y-2 text-base-content/80">
+              <li class="flex items-center justify-center md:justify-start">
+                <svg class="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                15% direct discount on stays Dec 1–Jan 31 (excl. Dec 20–Jan 5 peaks)
+              </li>
+              <li class="flex items-center justify-center md:justify-start">
+                <svg class="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Free welcome mocktail on arrival
+              </li>
+              <li class="flex items-center justify-center md:justify-start">
+                <svg class="h-5 w-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                One complimentary yoga class in our new Shala
+              </li>
+            </ul>
+            <p class="text-sm text-base-content/60 mt-4">
+              <strong>Code: LUMA25RENEW</strong> – Book by Nov 30. Limited spots for the first to experience our glow-up.
+            </p>
+          </div>
+
+          <!-- Right: Big CTA Button -->
+          <div class="flex justify-center md:justify-end">
+            <a href="https://bookingengine.stayflexi.com/?hotel_id=31402" target="_blank" class="btn btn-primary btn-lg w-full max-w-md shadow-xl transform hover:scale-105 transition-transform duration-300 text-xl font-bold">
+              Book Now & Save 15%
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8 md:mt-12">
+        <p class="text-sm text-base-content/50">
+          Powered by Stayflexi – Flexible payments, instant confirmation. Questions? Call +91 808 772 34 55.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Guest Stories Section -->
+  <section id="guest-stories" class="py-12 bg-gray-50 md:py-24">
+    <div class="px-4 md:px-6 lg:container lg:mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="font-display text-3xl font-bold text-base-content md:text-5xl">
+          Guest Stories from Last Season's Magic
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-base text-base-content/70 md:text-lg">
+          Hear how our A-frames and beachside serenity stole hearts—now amplified with your favorite upgrades. Ready to add yours?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <!-- Booking.com Review 1: Hardcoded Snippet -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★★</span>
+            <span class="text-sm text-base-content/60">Booking.com</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"really enjoyed our stay at LUMA!!! was a little bit worried before booking about bugs and the nature setting (had a scary experience once at a different place with a similar setting) but everything was AMAZING! the cottages are super clean, modern, with AC / fan and a huge comfy bed."</p>
+          <p class="text-sm text-base-content/50 mb-2">- Karolína, June 2025</p>
+          <a href="https://www.booking.com/hotel/in/grand-mayura.html#tab-reviews" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a>
+        </div>
+
+        <!-- Google Review 1 -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★★</span>
+            <span class="text-sm text-base-content/60">Google</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"I had a wonderful stay at LUMA. The hotel is in a great location, just a short walk from the beach, making it perfect for a relaxing getaway. It's a new property with a unique design that blends modern comfort with a local touch."</p>
+          <p class="text-sm text-base-content/50 mb-2">- Rajender Raj, May 2025</p>
+          <a href="https://maps.app.goo.gl/jFHVUQq1JouUCWJk8" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a> <!-- Use your exact IDs -->
+        </div>
+
+        <!-- Booking.com Review 2: Another Snippet -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★☆</span>
+            <span class="text-sm text-base-content/60">Booking.com</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"2 minutes from the beachfront, lovely location, great staff, an awesome exposed bathroom and lovely wooden structures all around. The place has only recently opened and costs are really competitive for what it offers."</p>
+          <p class="text-sm text-base-content/50 mb-2">- Divya Sharan, May 2025</p>
+          <a href="https://www.booking.com/hotel/in/grand-mayura.html#tab-reviews" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a> <!-- Swap in real ID -->
+        </div>
+
+        <!-- Booking.com Review 4: Another Snippet -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★★</span>
+            <span class="text-sm text-base-content/60">Booking.com</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"Location was prime.2 min walk to palolem beach.Very comfortable stay,friendly staff"</p>
+          <p class="text-sm text-base-content/50 mb-2">- Swati, May 2025</p>
+          <a href="https://www.booking.com/hotel/in/grand-mayura.html#tab-reviews" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a> <!-- Customize with your Place ID & Review ID -->
+        </div>
+
+        <!-- Booking.com Review 3: Another Snippet -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★★</span>
+            <span class="text-sm text-base-content/60">Booking.com</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"Beautiful new resort right by the beach and away from too much noise! One of the cleanest places we stayed across the whole of India. The huts are really cool, the beds are super comfy and clean. Nice fresh clean towels both for the bathroom and beach. Everything you need for a nice chilled stay in Goa."</p>
+          <p class="text-sm text-base-content/50 mb-2">- Sam, April 2025</p>
+          <a href="https://www.booking.com/hotel/in/grand-mayura.html#tab-reviews" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a> <!-- Swap in real ID -->
+        </div>
+
+        <!-- Google Review 2 -->
+        <div class="rounded-2xl bg-white p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
+          <div class="flex items-center mb-3">
+            <span class="text-primary text-xl mr-2">★★★★★</span>
+            <span class="text-sm text-base-content/60">Google</span>
+          </div>
+          <p class="italic text-base-content/80 mb-3">"I had an exceptional and beyond expectations stay! The location is absolutely perfect, just a 2-minute walk to Palolem Beach, making it super convenient. The cottages look exactly as shown in the photos, with no surprises at all. [...] The host was fantastic, and the hospitality was warm and welcoming. Overall, a must-visit place for anyone heading to Palolem!"</p>
+          <p class="text-sm text-base-content/50 mb-2">- Pranish Reddy, April 2025</p>
+          <a href="https://maps.app.goo.gl/ucSu38rwyUKfPznT7" target="_blank" class="text-primary hover:underline text-sm font-semibold">Read full review →</a> <!-- Use your exact IDs -->
+        </div>
+      </div>
+
+      <!-- <div class="text-center mt-8">
+        <a href="https://bookingengine.stayflexi.com/?hotel_id=31402" target="_blank" class="btn btn-primary py-8 md:w-48">
+          Join the Story - <br />Book Now (15% Off)
+        </a>
+        <p class="text-sm text-base-content/50 mt-4">More tales from our renewed haven dropping soon—sign up for updates?</p>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <%- include('./src/partials/footer.ejs') %>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
