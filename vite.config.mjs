@@ -29,6 +29,11 @@ export default defineConfig({
           filename: "booking.html",
         },
         {
+          name: "winter-renewal",
+          template: resolve(__dirname, "src/pages/winter-renewal.ejs"),
+          filename: "winter-renewal.html",
+        },
+        {
           name: "terms-and-services",
           template: resolve(__dirname, "src/pages/terms-and-services.ejs"),
           filename: "terms-and-services.html",
