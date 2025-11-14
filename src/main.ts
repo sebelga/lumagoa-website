@@ -45,8 +45,6 @@ function masonry() {
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html";
 
-  console.log("Is home page:", isHome);
-
   if (isHome) {
     addPswpAttributes();
     gallery();
