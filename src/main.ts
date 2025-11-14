@@ -18,7 +18,7 @@ function gallery() {
 function masonry() {
   const grid = document.querySelector("#masonry-grid");
   if (!grid) {
-    console.error("Masonry grid element not found");
+    console.info("Masonry grid element not found");
     return;
   } else {
     const msnry = new Masonry(grid, {
@@ -41,9 +41,17 @@ function masonry() {
 }
 
 (function init() {
-  addPswpAttributes();
-  gallery();
-  masonry();
-  googleMap();
+  const isHome =
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html";
+
+  console.log("Is home page:", isHome);
+
+  if (isHome) {
+    addPswpAttributes();
+    gallery();
+    masonry();
+    googleMap();
+  }
   updateDailyQuote();
 })();

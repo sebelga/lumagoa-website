@@ -3,7 +3,7 @@ export const googleMap = () => {
   (window as any).initMap = function () {
     const mapEl = document.getElementById("map");
     if (!mapEl) {
-      console.error("Map element not found");
+      console.info("Map element not found");
       return;
     }
 
