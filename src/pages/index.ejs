@@ -2,13 +2,20 @@
 <html lang="en" data-theme="pastel">
 <%- include('./src/partials/head.ejs', { title: 'Luma Goa: Cozy A-Frame Huts & Yoga Retreat in South Goa', description: 'Discover Luma Goa, a serene resort with A-frame huts, open-sky bathrooms, and upcoming yoga shala in Palolem, South Goa. Book your peaceful getaway today!' }) %>
 
-<body class="bg-white pt-16 text-gray-900 antialiased md:pt-25">
+<body class="bg-white pt-[75px] text-gray-900 antialiased md:pt-[102px]">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFRQ57PP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Header -->
   <%- include('./src/partials/header.ejs') %>
+
+  <!-- Offer Banner -->
+  <div class="bg-primary text-primary-content text-center py-4 px-4">
+    <p class="text-sm md:text-base font-semibold">
+      🌴 LUMA launch offer: 15% Off Stays Nov 15 - Jan 31! Use code <strong>LUMA25RENEW</strong> - Book by Nov 30. <a href="/winter-renewal" class="underline hover:no-underline">Learn More</a>
+    </p>
+  </div>
 
   <main>
     <!-- Hero Section -->
