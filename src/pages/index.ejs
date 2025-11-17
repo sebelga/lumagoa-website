@@ -10,305 +10,306 @@
   <!-- Header -->
   <%- include('./src/partials/header.ejs') %>
 
-  <!-- Hero Section -->
-  <section id="home" class="h-[75vh] overflow-hidden bg-[url(/img/hero-bg.jpeg)] bg-cover bg-center bg-no-repeat">
-    <div class="flex h-full items-center bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="h-[75vh] overflow-hidden bg-[url(/img/hero-bg.jpeg)] bg-cover bg-center bg-no-repeat">
+      <div class="flex h-full items-center bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
+        <div class="px-4 md:px-6 lg:container lg:mx-auto">
+          <div class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right">
+            <h2 class="font-display text-5xl font-bold text-white md:text-7xl">
+              Dream Beneath<br />the Goan Sky
+            </h2>
+
+            <p class="mt-6 max-w-lg text-white/90 md:text-lg md:leading-relaxed">
+              Cozy A-Frame huts and magical open-sky bathrooms create the
+              perfect getaway for relaxation, adventure, and unforgettable
+              memories.
+            </p>
+
+            <div class="mt-4 sm:mt-8">
+              <a href="/booking" class="btn btn-primary md:w-32">
+                Book now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="my-4 md:my-12">
       <div class="px-4 md:px-6 lg:container lg:mx-auto">
-        <div class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right">
-          <h2 class="font-display text-5xl font-bold text-white md:text-7xl">
-            Dream Beneath<br />the Goan Sky
-          </h2>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div class="rounded-box bg-secondary p-4 md:p-12 lg:px-16 lg:py-24">
+            <div class="mx-auto max-w-xl text-center">
+              <h2 class="font-display text-2xl font-bold md:text-3xl">
+                Welcome to Luma!
+              </h2>
 
-          <p class="mt-6 max-w-lg text-white/90 md:text-lg md:leading-relaxed">
-            Cozy A-Frame huts and magical open-sky bathrooms create the
-            perfect getaway for relaxation, adventure, and unforgettable
-            memories.
-          </p>
+              <div class="mt-4 text-base-content/90 md:mt-12">
+                <p>
+                  Welcome to Luma, a tranquil retreat tucked away in the heart
+                  of South Goa. Our nine A-Frame huts blend rustic charm with a
+                  touch of magic—each featuring a private open-sky bathroom for
+                  showering under the stars.
+                </p>
+                <p class="mt-4">
+                  Just a short hop from the coast, we offer a peaceful escape
+                  surrounded by nature, perfect for those seeking simplicity and
+                  serenity in one of India's most beloved destinations.
+                </p>
+                <p class="mt-4">
+                  Unplug, unwind, and let South Goa's magic wash over you.
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <div class="mt-4 sm:mt-8">
-            <a href="/booking" class="btn btn-primary md:w-32">
-              Book now
+          <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <img alt="" src="/img/hut-1.jpeg" class="hidden h-40 w-full rounded-box object-cover sm:h-56 md:block md:h-full" />
+
+            <img alt="" src="/img/gabrielle-maurer-hv1M-3MI80s-unsplash.jpg" class="h-40 w-full rounded-box object-cover sm:h-56 md:hidden lg:block lg:h-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section with Carousel Gallery -->
+    <section id="rooms" class="bg-gray-50 py-4 md:py-12">
+      <div class="px-6 lg:container lg:mx-auto">
+        <h2 class="text-1xl mb-2 text-center font-display font-bold md:text-2xl">
+          Our Rooms
+        </h2>
+        <h3 class="mb-8 text-center font-display text-3xl font-bold md:mb-16 md:text-5xl">
+          Beautiful A-Frame huts
+        </h3>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div class="p-4">
+            <img alt="" src="/img/hut-2.jpeg" class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full" />
+          </div>
+          <div class="p-4">
+            <div class="flex h-full items-center text-center">
+              <div>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Comfort & Spaciousness
+                </h4>
+                <p>
+                  Our cozy 25m² interiors feature spacious comfort, a plush
+                  mattress, air conditioning, and a ceiling fan—creating your
+                  perfect retreat after a day by the beach.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <img alt="" src="/img/room-2.jpeg" class="mb-4 w-full rounded-box" />
+            <img alt="" src="/img/room-3.jpeg" class="hidden w-full rounded-box lg:block" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div class="p-4">
+            <div class="flex h-full items-center text-center">
+              <div>
+                <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                  Private Balcony Oasis
+                </h4>
+                <p>
+                  Relax on your private balcony overlooking lush gardens.
+                  Immerse yourself in tranquility, surrounded by nature and the
+                  soothing melodies of birdsong.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <img alt="" src="/img/bathroom-2.jpeg" class="h-150 w-full rounded-box object-cover object-top" />
+          </div>
+          <div class="p-4">
+            <div class="mb-8">
+              <h4 class="text-1xl mb-4 font-bold md:text-2xl">
+                Open-Sky Serenity
+              </h4>
+              <p>
+                Refresh under a private open-sky bathroom, blending nature with
+                luxury as you shower beneath Goa’s sunlit skies or starry
+                nights.
+              </p>
+            </div>
+            <img alt="" src="/img/bathroom-1.jpeg" class="mb-4 w-full rounded-box" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Amenities Section -->
+    <section id="upcoming" class="py-12">
+      <div class="px-6 lg:container lg:mx-auto">
+        <h2 class="mb-4 text-center font-display text-3xl font-bold md:mb-8 md:text-5xl">
+          Upcoming Amenities
+        </h2>
+        <p class="mb-12 text-center text-lg text-base-content/60">
+          Ready for the 2025/2026 season!
+        </p>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div class="text-center">
+            <img src="/img/jared-rice-xce530fBHrk-unsplash.jpg" alt="Yoga Shala" class="mb-8 h-96 w-full rounded-lg object-cover object-top" />
+            <h3 class="mb-2 font-display text-2xl font-bold">Yoga Shala</h3>
+            <p class="text-lg">
+              We are excited to announce that we are currently building a
+              dedicated Yoga Shala for our guests. Stay tuned for yoga sessions
+              in a tranquil environment.
+            </p>
+          </div>
+          <div class="text-center">
+            <img src="/img/olena-bohovyk-OqqjgMR5PIA-unsplash.jpg" alt="Café Restaurant" class="mb-8 h-96 w-full rounded-lg object-cover" />
+            <h3 class="mb-2 font-display text-2xl font-bold">
+              Café Restaurant
+            </h3>
+            <p class="text-lg">
+              We are excited to announce the construction of Roots and Bloom,
+              our vegan and vegetarian café, located right next to Luma Goa.
+              This new addition will offer delicious, healthy meals, with
+              breakfast included for all our guests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-base-100 py-12 text-white" data-theme="dim">
+      <div class="px-6 lg:container lg:mx-auto">
+        <h2 class="text-1xl mb-2 text-center font-display font-bold md:text-2xl">
+          Photos
+        </h2>
+        <h2 class="mb-4 text-center font-display text-3xl font-bold md:mb-12 md:text-5xl">
+          Luma Gallery
+        </h2>
+      </div>
+
+      <div class="px-2">
+        <div class="relative w-full" id="masonry-grid">
+          <!-- Sizer elements for precision -->
+          <div class="grid-sizer hidden"></div>
+          <!-- Hidden to not take space visually -->
+          <div class="gutter-sizer hidden"></div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/01.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/01.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/13.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/13.jpg" alt="Cozy A-frame hut at Luma Goa resort in Palolem" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/03.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/03.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/04.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/04.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/07.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/07.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/06.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/06.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item rounded-lg p-2">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/08.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/08.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/09.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/09.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/11.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/11.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/12.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/12.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/05.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/05.jpg" alt="" loading="lazy" />
+            </a>
+          </div>
+          <div class="grid-item hidden rounded-lg p-2 md:block">
+            <a class="h-full w-full overflow-hidden" href="/img/gallery/large/14.jpg" data-cropped="true" target="_blank">
+              <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/14.jpg" alt="" loading="lazy" />
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Welcome Section -->
-  <section id="welcome" class="my-4 md:my-12">
-    <div class="px-4 md:px-6 lg:container lg:mx-auto">
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <div class="rounded-box bg-secondary p-4 md:p-12 lg:px-16 lg:py-24">
-          <div class="mx-auto max-w-xl text-center">
-            <h2 class="font-display text-2xl font-bold md:text-3xl">
-              Welcome to Luma!
-            </h2>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-50 py-12">
+      <div class="px-6 lg:container lg:mx-auto">
+        <h2 class="mb-8 text-center font-display text-3xl font-bold md:text-5xl">
+          Contact Us
+        </h2>
 
-            <div class="mt-4 text-base-content/90 md:mt-12">
-              <p>
-                Welcome to Luma, a tranquil retreat tucked away in the heart
-                of South Goa. Our nine A-Frame huts blend rustic charm with a
-                touch of magic—each featuring a private open-sky bathroom for
-                showering under the stars.
-              </p>
-              <p class="mt-4">
-                Just a short hop from the coast, we offer a peaceful escape
-                surrounded by nature, perfect for those seeking simplicity and
-                serenity in one of India's most beloved destinations.
-              </p>
-              <p class="mt-4">
-                Unplug, unwind, and let South Goa's magic wash over you.
-              </p>
-            </div>
-          </div>
-        </div>
+        <div class="flex flex-col md:flex-row">
+          <div class="py-4 pr-4 md:w-1/3">
+            <p class="mb-4">
+              <strong>Address: </strong>Palolem Down St, Palolem, Canacona,
+              South Goa 403702, India
+            </p>
+            <p class="mb-4">
+              <strong>Phone: </strong>
+              <a href="tel:+918087723455">+91 808 772 34 55</a>
+            </p>
+            <p class="mb-12">
+              <strong>Email: </strong>
+              <script>
+                var user = "contact";
+                var domain = "lumagoa.com";
+                var email = user + "@" + domain;
+                document.write(
+                  '<a href="mailto:' + email + '">' + email + "</a>",
+                );
+              </script>
+              <noscript>Enable JavaScript to view email address.</noscript>
+            </p>
 
-        <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <img alt="" src="/img/hut-1.jpeg" class="hidden h-40 w-full rounded-box object-cover sm:h-56 md:block md:h-full" />
-
-          <img alt="" src="/img/gabrielle-maurer-hv1M-3MI80s-unsplash.jpg" class="h-40 w-full rounded-box object-cover sm:h-56 md:hidden lg:block lg:h-full" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rooms Section with Carousel Gallery -->
-  <section id="rooms" class="bg-gray-50 py-4 md:py-12">
-    <div class="px-6 lg:container lg:mx-auto">
-      <h2 class="text-1xl mb-2 text-center font-display font-bold md:text-2xl">
-        Our Rooms
-      </h2>
-      <h3 class="mb-8 text-center font-display text-3xl font-bold md:mb-16 md:text-5xl">
-        Beautiful A-Frame huts
-      </h3>
-
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div class="p-4">
-          <img alt="" src="/img/hut-2.jpeg" class="h-40 w-full rounded-box object-cover sm:h-56 md:h-full" />
-        </div>
-        <div class="p-4">
-          <div class="flex h-full items-center text-center">
-            <div>
-              <h4 class="text-1xl mb-4 font-bold md:text-2xl">
-                Comfort & Spaciousness
-              </h4>
-              <p>
-                Our cozy 25m² interiors feature spacious comfort, a plush
-                mattress, air conditioning, and a ceiling fan—creating your
-                perfect retreat after a day by the beach.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="p-4">
-          <img alt="" src="/img/room-2.jpeg" class="mb-4 w-full rounded-box" />
-          <img alt="" src="/img/room-3.jpeg" class="hidden w-full rounded-box lg:block" />
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <div class="p-4">
-          <div class="flex h-full items-center text-center">
-            <div>
-              <h4 class="text-1xl mb-4 font-bold md:text-2xl">
-                Private Balcony Oasis
-              </h4>
-              <p>
-                Relax on your private balcony overlooking lush gardens.
-                Immerse yourself in tranquility, surrounded by nature and the
-                soothing melodies of birdsong.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="p-4">
-          <img alt="" src="/img/bathroom-2.jpeg" class="h-150 w-full rounded-box object-cover object-top" />
-        </div>
-        <div class="p-4">
-          <div class="mb-8">
-            <h4 class="text-1xl mb-4 font-bold md:text-2xl">
-              Open-Sky Serenity
-            </h4>
-            <p>
-              Refresh under a private open-sky bathroom, blending nature with
-              luxury as you shower beneath Goa’s sunlit skies or starry
-              nights.
+            <h3 class="mb-2 font-display text-lg font-bold">
+              Discover Palolem and Beyond
+            </h3>
+            <p class="text-base-content/60">
+              Our resort is just steps away from the picturesque Palolem
+              Beach—known for its calm waters, stunning sunsets, and friendly
+              atmosphere. Explore charming seaside cafés offering fresh local
+              cuisine, lively markets filled with vibrant textiles and crafts,
+              and abundant wellness activities, including yoga classes,
+              kayaking, paddleboarding, and dolphin-spotting trips.
             </p>
           </div>
-          <img alt="" src="/img/bathroom-1.jpeg" class="mb-4 w-full rounded-box" />
+
+          <div class="py-4 md:w-2/3 md:pl-4">
+            <div id="map" style="height: 400px; width: 100%"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Amenities Section -->
-  <section id="upcoming" class="py-12">
-    <div class="px-6 lg:container lg:mx-auto">
-      <h2 class="mb-4 text-center font-display text-3xl font-bold md:mb-8 md:text-5xl">
-        Upcoming Amenities
-      </h2>
-      <p class="mb-12 text-center text-lg text-base-content/60">
-        Ready for the 2025/2026 season!
-      </p>
-
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div class="text-center">
-          <img src="/img/jared-rice-xce530fBHrk-unsplash.jpg" alt="Yoga Shala" class="mb-8 h-96 w-full rounded-lg object-cover object-top" />
-          <h3 class="mb-2 font-display text-2xl font-bold">Yoga Shala</h3>
-          <p class="text-lg">
-            We are excited to announce that we are currently building a
-            dedicated Yoga Shala for our guests. Stay tuned for yoga sessions
-            in a tranquil environment.
-          </p>
-        </div>
-        <div class="text-center">
-          <img src="/img/olena-bohovyk-OqqjgMR5PIA-unsplash.jpg" alt="Café Restaurant" class="mb-8 h-96 w-full rounded-lg object-cover" />
-          <h3 class="mb-2 font-display text-2xl font-bold">
-            Café Restaurant
-          </h3>
-          <p class="text-lg">
-            We are excited to announce the construction of Roots and Bloom,
-            our vegan and vegetarian café, located right next to Luma Goa.
-            This new addition will offer delicious, healthy meals, with
-            breakfast included for all our guests.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="bg-base-100 py-12 text-white" data-theme="dim">
-    <div class="px-6 lg:container lg:mx-auto">
-      <h2 class="text-1xl mb-2 text-center font-display font-bold md:text-2xl">
-        Photos
-      </h2>
-      <h2 class="mb-4 text-center font-display text-3xl font-bold md:mb-12 md:text-5xl">
-        Luma Gallery
-      </h2>
-    </div>
-
-    <div class="px-2">
-      <div class="relative w-full" id="masonry-grid">
-        <!-- Sizer elements for precision -->
-        <div class="grid-sizer hidden"></div>
-        <!-- Hidden to not take space visually -->
-        <div class="gutter-sizer hidden"></div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/01.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/01.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/13.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/13.jpg" alt="Cozy A-frame hut at Luma Goa resort in Palolem" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/03.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/03.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/04.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/04.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/07.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/07.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/06.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/06.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item rounded-lg p-2">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/08.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/08.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/09.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/09.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/11.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/11.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/12.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/12.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/05.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/05.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-        <div class="grid-item hidden rounded-lg p-2 md:block">
-          <a class="h-full w-full overflow-hidden" href="/img/gallery/large/14.jpg" data-cropped="true" target="_blank">
-            <img class="gallery-thumb h-auto w-full rounded-lg object-cover" src="/img/gallery/524/14.jpg" alt="" loading="lazy" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="bg-gray-50 py-12">
-    <div class="px-6 lg:container lg:mx-auto">
-      <h2 class="mb-8 text-center font-display text-3xl font-bold md:text-5xl">
-        Contact Us
-      </h2>
-
-      <div class="flex flex-col md:flex-row">
-        <div class="py-4 pr-4 md:w-1/3">
-          <p class="mb-4">
-            <strong>Address: </strong>Palolem Down St, Palolem, Canacona,
-            South Goa 403702, India
-          </p>
-          <p class="mb-4">
-            <strong>Phone: </strong>
-            <a href="tel:+918087723455">+91 808 772 34 55</a>
-          </p>
-          <p class="mb-12">
-            <strong>Email: </strong>
-            <script>
-              var user = "contact";
-              var domain = "lumagoa.com";
-              var email = user + "@" + domain;
-              document.write(
-                '<a href="mailto:' + email + '">' + email + "</a>",
-              );
-            </script>
-            <noscript>Enable JavaScript to view email address.</noscript>
-          </p>
-
-          <h3 class="mb-2 font-display text-lg font-bold">
-            Discover Palolem and Beyond
-          </h3>
-          <p class="text-base-content/60">
-            Our resort is just steps away from the picturesque Palolem
-            Beach—known for its calm waters, stunning sunsets, and friendly
-            atmosphere. Explore charming seaside cafés offering fresh local
-            cuisine, lively markets filled with vibrant textiles and crafts,
-            and abundant wellness activities, including yoga classes,
-            kayaking, paddleboarding, and dolphin-spotting trips.
-          </p>
-        </div>
-
-        <div class="py-4 md:w-2/3 md:pl-4">
-          <div id="map" style="height: 400px; width: 100%"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    </section>
+  </main>
   <!-- Footer -->
   <%- include('./src/partials/footer.ejs') %>
 
