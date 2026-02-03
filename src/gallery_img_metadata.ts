@@ -8,9 +8,9 @@ interface Metadata {
   [key: string]: ImageMetadata;
 }
 
-export async function addPswpAttributes() {
+export async function addPswpAttributes(fileName: string) {
   try {
-    const response = await fetch("/gallery-img-metadata.json");
+    const response = await fetch(`/${fileName}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch metadata: ${response.statusText}`);
     }

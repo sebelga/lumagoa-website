@@ -44,12 +44,18 @@ function masonry() {
   const isHome =
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html";
+  const isYogaShala = window.location.pathname === "/yoga-shala";
+  console.log(window.location.pathname);
 
   if (isHome) {
-    addPswpAttributes();
+    addPswpAttributes("gallery-img-metadata.json");
     gallery();
     masonry();
     googleMap();
+  } else if (isYogaShala) {
+    addPswpAttributes("gallery-shala-img-metadata.json");
+    gallery();
+    masonry();
   }
   updateDailyQuote();
 })();

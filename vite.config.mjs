@@ -43,6 +43,11 @@ export default defineConfig({
           template: resolve(__dirname, "src/pages/privacy-policy.ejs"),
           filename: "privacy-policy.html",
         },
+        {
+          name: "yoga-shala",
+          template: resolve(__dirname, "src/pages/yoga-shala.ejs"),
+          filename: "yoga-shala.html",
+        },
       ],
       htmlMinify: true,
       watchOptions: {
