@@ -10,6 +10,7 @@ function gallery() {
     gallery: "#gallery",
     children: "a",
     pswpModule: () => import("photoswipe"),
+    escKey: true,
   });
 
   lightbox.init();
@@ -40,22 +41,29 @@ function masonry() {
   }
 }
 
-(function init() {
+function init() {
   const isHome =
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html";
   const isYogaShala = window.location.pathname === "/yoga-shala";
-  console.log(window.location.pathname);
+  const isCafeRestaurant = window.location.pathname === "/cafe-restaurant";
+  const isGallery = window.location.pathname === "/gallery";
 
   if (isHome) {
-    addPswpAttributes("gallery-img-metadata.json");
-    gallery();
-    masonry();
     googleMap();
   } else if (isYogaShala) {
     addPswpAttributes("gallery-shala-img-metadata.json");
     gallery();
     masonry();
+  } else if (isCafeRestaurant) {
+    googleMap();
+  } else if (isGallery) {
+    addPswpAttributes("gallery-img-metadata.json");
+    gallery();
+    masonry();
   }
+
   updateDailyQuote();
-})();
+}
+
+window.addEventListener("DOMContentLoaded", init);

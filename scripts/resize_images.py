@@ -1,6 +1,10 @@
 import os
 import sys
-from PIL import Image
+from PIL import Image, ImageOps
+from pillow_heif import register_heif_opener
+
+# Register HEIF opener for Pillow
+register_heif_opener()
 
 # Check for correct number of arguments
 if len(sys.argv) != 3:
@@ -29,18 +33,21 @@ if not os.path.exists(output_folder):
 
 # Resize images only if larger than desired width
 for filename in os.listdir(input_folder):
-    if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', '.bmp')):
+    if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.heic')):
         img_path = os.path.join(input_folder, filename)
+        base_name = os.path.splitext(filename)[0]
+        output_filename = f"{base_name}.jpg"
         with Image.open(img_path) as img:
+            img = ImageOps.exif_transpose(img)
             original_width = img.size[0]
             if original_width <= desired_width:
-                # Save original if already smaller or equal
-                img.save(os.path.join(output_folder, filename))
+                # Save original if already smaller or equal, converted to JPEG
+                img.save(os.path.join(output_folder, output_filename), 'JPEG', quality=55)
             else:
                 # Calculate proportional height and resize
                 width_percent = (desired_width / float(original_width))
                 new_height = int((float(img.size[1]) * float(width_percent)))
                 resized_img = img.resize((desired_width, new_height), Image.LANCZOS)
-                resized_img.save(os.path.join(output_folder, filename))
+                resized_img.save(os.path.join(output_folder, output_filename), 'JPEG', quality=55)
 
 print("Resizing complete! Output saved to:", output_folder)

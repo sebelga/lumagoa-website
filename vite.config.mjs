@@ -34,6 +34,21 @@ export default defineConfig({
           filename: "winter-renewal.html",
         },
         {
+          name: "yoga-shala",
+          template: resolve(__dirname, "src/pages/yoga-shala.ejs"),
+          filename: "yoga-shala.html",
+        },
+        {
+          name: "cafe-restaurant",
+          template: resolve(__dirname, "src/pages/cafe-restaurant.ejs"),
+          filename: "cafe-restaurant.html",
+        },
+        {
+          name: "gallery",
+          template: resolve(__dirname, "src/pages/gallery.ejs"),
+          filename: "gallery.html",
+        },
+        {
           name: "terms-and-services",
           template: resolve(__dirname, "src/pages/terms-and-services.ejs"),
           filename: "terms-and-services.html",
@@ -42,11 +57,6 @@ export default defineConfig({
           name: "privacy-policy",
           template: resolve(__dirname, "src/pages/privacy-policy.ejs"),
           filename: "privacy-policy.html",
-        },
-        {
-          name: "yoga-shala",
-          template: resolve(__dirname, "src/pages/yoga-shala.ejs"),
-          filename: "yoga-shala.html",
         },
       ],
       htmlMinify: true,

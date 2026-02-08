@@ -14,3 +14,22 @@ python3 ./scripts/resize_images.py <maxImageWidth> <folderWithImages>
 # example
 python3 ./scripts/resize_images.py 1600 /Users/seb/Desktop/gallery/originals
 ```
+
+## Resize images for hero/og/twitter
+
+Make sure you have the dependencies installed
+
+```py
+pip3 install pillow
+pip3 install pillow-heif
+```
+
+Pass an image an it will render the 3 different sizes (for desktop, og and twitter)
+
+```py
+# Works with HEIC files directly
+python3 ./scripts/resize_hero_image.py ./public/img/cafe-hero.HEIC
+
+# Works with JPG
+python3 ./scripts/resize_hero_image.py ./public/img/cafe-hero.jpg
+```

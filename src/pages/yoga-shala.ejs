@@ -1,61 +1,177 @@
 <!doctype html>
 <html lang="en" data-theme="pastel">
-<%- include('./src/partials/head.ejs', { title: 'Yoga Shala Palolem South Goa | Authentic Yoga Classes at Luma Goa', description: 'Experience authentic yoga in Palolem at Luma Goa\'s new yoga shala. Drop-in classes, retreats, and sound baths in a serene beachside setting. Book now!' }) %>
-
-<!-- Additional SEO Meta Tags -->
-<meta property="og:title" content="Yoga Shala Palolem South Goa | Authentic Yoga Classes at Luma Goa">
-<meta property="og:description" content="Experience authentic yoga in Palolem at Luma Goa's new yoga shala. Drop-in classes, retreats, and sound baths in a serene beachside setting. Book now!">
-<meta property="og:image" content="/img/yoga-shala-hero.jpg">
-<meta property="og:url" content="https://lumagoa.com/yoga-shala">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Yoga Shala Palolem South Goa | Authentic Yoga Classes at Luma Goa">
-<meta name="twitter:description" content="Experience authentic yoga in Palolem at Luma Goa's new yoga shala. Drop-in classes, retreats, and sound baths in a serene beachside setting. Book now!">
-<meta name="twitter:image" content="/img/yoga-shala-hero.jpg">
-<link rel="canonical" href="https://lumagoa.com/yoga-shala">
-
-<!-- Structured Data for Local Business -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Luma Goa Yoga Shala",
-    "description": "Serene yoga shala in Palolem, South Goa offering authentic yoga classes, retreats, and sound baths in a peaceful beachside setting.",
-    "url": "https://lumagoa.com/yoga-shala",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Palolem Down St",
-      "addressLocality": "Palolem",
-      "addressRegion": "South Goa",
-      "postalCode": "403702",
-      "addressCountry": "IN"
-    },
-    "telephone": "+91 808 772 34 55",
-    "email": "contact@lumagoa.com",
-    "image": "/img/yoga-shala-hero.jpg",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Yoga Classes and Retreats",
-      "itemListElement": [{
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Drop-in Yoga Classes",
-            "description": "Join our morning flow and evening relaxation classes for 600 INR."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Sound Bath Sessions",
-            "description": "Experience restorative sound healing for 800 INR."
-          }
+<%- include('./src/partials/head.ejs', {
+    title: 'Yoga Shala Palolem South Goa | Authentic Yoga Classes at Luma Goa',
+    description: 'Experience authentic yoga in Palolem at Luma Goa\'s new yoga shala. Drop-in classes, retreats, and sound baths in a serene beachside setting. Book now!',
+    extraMeta: `<meta property="og:url" content="https://lumagoa.com/yoga-shala">
+    <meta property="og:image" content="/img/yoga-shala-hero_og.jpg">
+    <meta name="twitter:url" content="https://lumagoa.com/yoga-shala">
+  <meta name="twitter:image" content="/img/yoga-shala-hero_twitter.jpg">`,
+extraContent: `<link rel="canonical" href="https://lumagoa.com/yoga-shala" />`,
+schemaData: {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Luma Goa Yoga Shala",
+  "description": "Serene yoga shala in Palolem, South Goa offering authentic yoga classes, retreats, and sound baths in a peaceful beachside setting.",
+  "url": "https://lumagoa.com/yoga-shala",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Palolem Down St",
+    "addressLocality": "Palolem",
+    "addressRegion": "South Goa",
+    "postalCode": "403702",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 15.0126252,
+    "longitude": 74.0210419
+  },
+  "telephone": "+91 808 772 34 55",
+  "email": "contact@lumagoa.com",
+  "image": "https://lumagoa.com/img/yoga-shala-hero_display.jpg",
+  "parentOrganization": {
+    "@type": "Hotel",
+    "name": "Luma",
+    "url": "https://lumagoa.com/"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Yoga Classes and Retreats",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Drop-in Yoga Classes",
+          "description": "Join our morning flow and evening relaxation classes for 600 INR."
         }
-      ]
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sound Bath Sessions",
+          "description": "Experience restorative sound healing for 800 INR."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Contact Improvisation Workshop",
+          "description": "Explore movement and connection through guided contact improvisation for 500 INR."
+        }
+      }
+    ]
+  },
+  "event": [
+    {
+      "@type": "Event",
+      "name": "Full Body Hatha Flow",
+      "description": "A comprehensive morning Hatha practice with Pankaj.",
+      "performer": { "@type": "Person", "name": "Pankaj" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Monday", "Wednesday", "Friday"],
+        "startTime": "08:00",
+        "endTime": "09:30"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Energy Flow",
+      "description": "Vitality-boosting morning flow with Sunny.",
+      "performer": { "@type": "Person", "name": "Sunny" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Tuesday"],
+        "startTime": "08:00",
+        "endTime": "09:30"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Awaken & Elevate Energizing Kundalini",
+      "description": "Transformative Kundalini yoga session with Nicky.",
+      "performer": { "@type": "Person", "name": "Nicky" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Thursday", "Saturday"],
+        "startTime": "08:00",
+        "endTime": "09:30"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Energising Flow",
+      "description": "High-energy morning yoga session with Pankaj.",
+      "performer": { "@type": "Person", "name": "Pankaj" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Friday"],
+        "startTime": "08:00",
+        "endTime": "09:30"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Softening into Presence (Gentle Kundalini)",
+      "description": "Mindful afternoon movement focused on presence.",
+      "performer": { "@type": "Person", "name": "Nicky" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Tuesday", "Friday"],
+        "startTime": "16:30",
+        "endTime": "18:00"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Yin Yoga",
+      "description": "Deep restorative Yin Yoga session with Nicky.",
+      "performer": { "@type": "Person", "name": "Nicky" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Thursday", "Saturday"],
+        "startTime": "16:30",
+        "endTime": "18:00"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Sound Bath Healing",
+      "description": "Evening sound therapy and vibration healing with Sunny.",
+      "performer": { "@type": "Person", "name": "Sunny" },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Tuesday"],
+        "startTime": "20:00",
+        "endTime": "21:00"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Contact Improvisation Class + Jam",
+      "description": "Guided movement class followed by a contact jam session.",
+      "eventSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": ["Saturday"],
+        "startTime": "10:00",
+        "endTime": "14:00"
+      }
     }
-  }
-</script>
+  ]
+}
+}) %>
 
 <body class="bg-white pt-[75px] text-gray-900 antialiased md:pt-[102px]">
   <!-- Google Tag Manager (noscript) -->
@@ -67,16 +183,31 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="h-[75vh] overflow-hidden bg-[url(/img/yoga-shala-hero.jpg)] bg-cover bg-center bg-no-repeat">
-      <div class="flex h-full items-center bg-black/40 p-8 md:p-12 lg:px-16 lg:py-24">
-        <div class="px-4 md:px-6 lg:container lg:mx-auto">
-          <div class="max-w-[800px] text-center ltr:sm:text-left rtl:sm:text-right">
-            <h1 class="font-display text-5xl font-bold text-white md:text-7xl">
-              Yoga Shala Palolem – South Goa
-            </h1>
-            <p class="mt-6 max-w-lg text-white/90 md:text-lg md:leading-relaxed">
-              Experience authentic yoga in Palolem at Luma Goa’s new yoga shala. Just 200 meters from Palolem Beach, under coconut trees — perfect for drop-in classes, yoga retreats, morning flow and evening meditation in peaceful South Goa.
-            </p>
+    <section class="relative min-h-[70vh] flex items-center justify-center py-20 overflow-hidden bg-stone-900">
+
+      <div class="absolute inset-0 z-0">
+        <img src="/img/yoga-shala-hero_display.jpg" alt="Morning yoga session at LUMA Yoga Shala Palolem South Goa" class="w-full h-full object-cover opacity-60" />
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-900/90 via-transparent to-stone-900/70"></div>
+      </div>
+
+      <div class="container mx-auto px-6 max-w-5xl relative z-1 text-center">
+        <div class="space-y-6">
+          <h2 class="text-xs uppercase tracking-[0.4em] text-secondary font-bold">
+            LUMA Yoga Shala Palolem &bull; South Goa
+          </h2>
+
+          <h1 class="text-5xl md:text-7xl font-display text-white leading-tight">
+            Movement to <br /><span class="italic font-light text-stone-300">Restore the Soul.</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-stone-200 leading-relaxed max-w-2xl mx-auto">
+            Experience authentic Hatha, Kundalini, and Yin Yoga in our open-air sanctuary. Designed for those looking to recharge in the heart of Palolem.
+          </p>
+
+          <div class="pt-8">
+            <a href="#schedule" class="px-10 py-4 bg-[#c66f54] text-white rounded-full inline-block hover:bg-opacity-90 transition-all shadow-xl font-bold tracking-wide">
+              View Weekly Schedule
+            </a>
           </div>
         </div>
       </div>
@@ -104,25 +235,149 @@
     </section>
 
     <!-- Weekly Schedule Section -->
-    <section class="py-18">
+    <section id="schedule" class="py-18">
       <div class="px-6 lg:container lg:mx-auto">
         <h2 class="text-center font-display text-3xl font-bold mb-4 md:text-5xl">Weekly Schedule</h2>
-        <h3 class="text-center font-display text-xl mb-8 md:text-2xl">Feb 2nd - Feb 8th 2026</h3>
-        <img src="/img/yoga-schedule.jpg" alt="Weekly Yoga Schedule" class="w-full rounded-xl mb-8 shadow-2xl" />
+        <h3 class="text-center font-display text-xl mb-8 md:text-2xl">Feb 9th - Feb 15th 2026</h3>
 
-        <h3 class="text-center font-display text-xl mt-24 mb-8 md:text-2xl">Feb 9th - Feb 15th 2026</h3>
-        <img src="/img/yoga-schedule-2.jpg" alt="Weekly Yoga Schedule" class="w-full rounded-xl mb-8 shadow-2xl" />
+        <div class="my-16 overflow-x-auto">
+          <table class="w-full min-w-[1000px] table-fixed border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">
+            <thead class="bg-stone-50 border-b border-stone-100">
+              <tr>
+                <th class="w-32 p-5 text-left font-display text-stone-400 italic font-light">Time</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Mon</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Tue</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Wed</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Thur</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Fri</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Sat</th>
+                <th class="w-[13%] p-5 text-left font-display text-stone-800">Sun</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-stone-50">
+
+              <tr>
+                <td class="p-5 py-8 align-top font-medium text-emerald-800 bg-stone-50/30">
+                  08:00 – 09:30
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="block font-medium leading-tight mb-1 text-stone-800">Full Body Hatha Flow</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Pankaj</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="block font-medium leading-tight mb-1 text-stone-800">Energy Flow</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Sunny</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="block font-medium leading-tight mb-1 text-stone-800">Full Body Hatha Flow</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Pankaj</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-100 bg-emerald-50/10">
+                  <span class="block font-medium leading-tight mb-1 text-stone-900">Awaken & Elevate Energizing Kundalini</span>
+                  <span class="text-[10px] text-emerald-700/60 font-bold uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="block font-medium leading-tight mb-1 text-stone-800">Energising Flow</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Pankaj</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-100 bg-emerald-50/10">
+                  <span class="block font-medium leading-tight mb-1 text-stone-900">Awaken & Elevate Energizing Kundalini</span>
+                  <span class="text-[10px] text-emerald-700/60 font-bold uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50 text-stone-300 italic">—</td>
+              </tr>
+
+              <tr class="bg-stone-50/30">
+                <td class="p-5 py-8 align-top font-medium text-emerald-800 italic bg-stone-50/30">
+                  Morning
+                </td>
+                <td colspan="5" class="p-5 text-stone-400 text-xs italic">Private Sessions & Practice</td>
+                <td class="p-5 align-top border-l border-emerald-100 bg-emerald-50/20">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">10am – 2pm</span>
+                  <span class="block font-medium leading-tight">Contact Impro Class + Jam</span>
+                  <span class="text-[10px] text-stone-400 uppercase italic">Movement</span>
+                </td>
+                <td class="p-5 align-top border-l border-emerald-100 bg-emerald-50/20">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">10am – 12pm</span>
+                  <span class="block font-medium leading-tight">Contact Impro Jam (Movement)</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="p-5 py-8 align-top font-medium text-emerald-800 italic bg-stone-50/30">
+                  Afternoon
+                </td>
+                <td class="p-5 align-top border-l border-stone-50 text-stone-300 italic">—</td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">16:30 – 18:00</span>
+                  <span class="block font-medium leading-tight mb-1">Softening into Presence (Gentle Kundalini)</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">17:30 – 19:00</span>
+                  <span class="block font-medium leading-tight mb-1">Connection Jam</span>
+                  <span class="text-[10px] text-stone-400 uppercase italic">Movement</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">16:30 – 18:00</span>
+                  <span class="block font-medium leading-tight mb-1">Yin Yoga</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">16:30 – 18:00</span>
+                  <span class="block font-medium leading-tight mb-1">Softening into Presence (Gentle Kundalini)</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50">
+                  <span class="text-[10px] text-emerald-700 font-bold block mb-1">16:30 – 18:00</span>
+                  <span class="block font-medium leading-tight mb-1">Yin Yoga</span>
+                  <span class="text-[10px] text-stone-400 uppercase tracking-widest">Nicky</span>
+                </td>
+
+                <td class="p-5 align-top border-l border-stone-50 text-stone-300 italic">—</td>
+              </tr>
+
+              <tr class="bg-stone-900 text-stone-200">
+                <td class="p-5 py-6 align-top font-medium text-emerald-400 italic">
+                  Evening
+                </td>
+                <td class="border-l border-stone-800"></td>
+
+                <td class="p-5 align-top border-l border-stone-800">
+                  <span class="text-[10px] text-emerald-400 font-bold block mb-1">20:00 – 21:00</span>
+                  <span class="block font-medium leading-tight mb-1">Sound Bath Healing</span>
+                  <span class="text-[10px] text-stone-500 uppercase tracking-widest">Sunny</span>
+                </td>
+
+                <td colspan="5" class="border-l border-stone-800"></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
 
         <!-- Pricing -->
         <div class="mt-12 container max-w-4xl mx-auto text-center">
-          <h4 class="text-xl md:text-2xl font-bold font-display">Prices</h4>
+          <h3 class="text-center font-display text-xl mb-8 md:text-2xl">Prices</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             <div class="text-center">
-              <h3 class="font-bold text-xl mb-2">Drop-in classes</h3>
+              <h4 class="font-bold text-xl mb-2">Drop-in classes</h4>
               <p>600 INR (* Call for pricing, ** Free entry)</p>
             </div>
             <div class="text-center">
-              <h3 class="font-bold text-xl mb-2">Sound bath</h3>
+              <h4 class="font-bold text-xl mb-2">Sound bath</h4>
               <p>800 INR<br>(limited spots, contact for enquiry +91 808 772 34 55)</p>
             </div>
           </div>
@@ -336,7 +591,7 @@
 
           </div>
           <p class="mt-6 text-base text-gray-600">
-            Flexible rental options: daily, multi-day, or exclusive use. Custom quotes for groups of 8-16.
+            Custom quotes for groups of 8-16.
           </p>
         </div>
       </div>
@@ -345,6 +600,12 @@
 
   <!-- Footer -->
   <%- include('./src/partials/footer.ejs') %>
+
+  <a href="https://wa.me/918087723455?text=Hi%20LUMA,%20I'm%20interested%20in%20joining%20a%20yoga%20class%20or%20Sound%20Bath%20session." target="_blank" rel="noopener" class="fixed bottom-8 right-8 z-50 flex items-center justify-center w-16 h-16 rounded-full shadow-2xl transition-transform hover:scale-110 active:scale-95 bg-[#c66f54]">
+    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

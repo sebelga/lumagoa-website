@@ -19,12 +19,20 @@ export async function updateDailyQuote(): Promise<void> {
 
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const selectedQuote = quotes[randomIndex];
+    if (!selectedQuote || !selectedQuote.text || !selectedQuote.author) return;
 
-    const quoteElement = document.getElementById("daily-quote");
-    if (quoteElement && selectedQuote) {
-      quoteElement.textContent = `"${selectedQuote.text}" - ${selectedQuote.author}`;
-    } else {
-      console.warn('Element with id "daily-quote" not found');
+    const today = +new Date(); // Get today's date
+    const lastDayLastYear = +new Date(new Date().getFullYear(), 0, 0); // Dec 31 of the previous year
+    const dayOfYear = Math.floor((today - lastDayLastYear) / 86400000); // e.g. for February 1st, it equals to 32
+
+    const quote = quotes[dayOfYear % quotes.length];
+    if (!quote || !quote.text || !quote.author) return;
+
+    const quoteEl = document.getElementById("footer-quote");
+    const authorEl = document.getElementById("footer-quote-author");
+    if (quoteEl && authorEl) {
+      quoteEl.innerText = `"${quote.text}"`;
+      authorEl.innerText = `${quote.author}`;
     }
   } catch (error) {
     console.error("Error updating daily quote:", error);
