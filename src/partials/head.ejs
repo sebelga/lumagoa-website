@@ -24,11 +24,11 @@
   <meta name="author" content="LUMA Goa" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="<%= title %>" />
-  <meta property="og:description" content="<%= description %>" />
+  <meta property="og:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : title %>" />
+  <meta property="og:description" content="<%= typeof ogDescription !== 'undefined' ? ogDescription : description %>" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="<%= title %>" />
-  <meta name="twitter:description" content="<%= description %>" />
+  <meta name="twitter:title" content="<%= typeof ogTitle !== 'undefined' ? ogTitle : title %>" />
+  <meta name="twitter:description" content="<%= typeof ogDescription !== 'undefined' ? ogDescription : description %>" />
   <%- typeof extraMeta !== 'undefined' ? extraMeta : '' %>
   <link rel="icon" href="/img/favicon.png" type="image/png" sizes="256x256" />
   <link rel="stylesheet" href="/src/styles.css" />
