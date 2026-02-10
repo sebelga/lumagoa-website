@@ -49,6 +49,11 @@ export default defineConfig({
           filename: "gallery.html",
         },
         {
+          name: "deposit-payment",
+          template: resolve(__dirname, "src/pages/deposit-payment.ejs"),
+          filename: "deposit-payment.html",
+        },
+        {
           name: "terms-and-services",
           template: resolve(__dirname, "src/pages/terms-and-services.ejs"),
           filename: "terms-and-services.html",
