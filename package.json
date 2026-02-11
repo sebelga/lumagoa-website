@@ -5,6 +5,7 @@
   "main": "index.ejs",
   "scripts": {
     "dev": "vite",
+    "dev:netlify": "netlify dev",
     "build": "vite build",
     "generate-gallery-metadata": "python3 ./scripts/image_metadata.py $PWD/public/img/gallery/large $PWD/public --output ./public/gallery-img-metadata.json",
     "preview": "vite preview"
