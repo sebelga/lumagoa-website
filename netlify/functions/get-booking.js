@@ -23,25 +23,28 @@ exports.handler = async (event) => {
     if (guest) {
       return {
         statusCode: 200,
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           customerName: guest[1],
           customerEmail: guest[2],
           checkIn: guest[3],
           checkOut: guest[4],
-          bookingAmount: guest[5].trim(),
-          depositAmount: guest[7].trim(),
-          depositPaid: guest[8].trim(),
+          bookingAmount: +guest[5].trim(),
+          depositAmount: +guest[7].trim(),
+          depositPaid: Boolean(guest[8].trim()),
         }),
       };
     } else {
       return {
         statusCode: 404,
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ error: "Booking not found" }),
       };
     }
   } catch (err) {
     return {
       statusCode: 500,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ error: "Internal server error" }),
     };
   }

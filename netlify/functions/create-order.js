@@ -43,12 +43,14 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order),
     };
   } catch (error) {
     console.error("Razorpay Order Error:", error);
     return {
       statusCode: 500,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         error: "Failed to create order",
         details: error.message,
