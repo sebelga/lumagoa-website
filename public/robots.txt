@@ -3,6 +3,8 @@ Allow: /
 Sitemap: https://lumagoa.com/sitemap.xml
 
 # Disallow folders that don't need to be indexed (e.g., source code or partials)
+Disallow: /deposit-payment
+Disallow: /payment-success
 Disallow: /src/
 Disallow: /node_modules/
 Disallow: /private/

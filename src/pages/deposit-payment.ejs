@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" data-theme="pastel" style="--header-height-mobile: 75px; --header-height-desktop: 102px;">
+
+<%- include('./src/partials/head.ejs', { 
+  title: 'Secure Deposit Payment | LUMA Goa', 
+  description: 'Secure payment portal for LUMA booking deposits.',
+  extraMeta: '<meta name="robots" content="noindex, nofollow">'
+}) %>
+
+<body class="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFRQ57PP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <%- include('./src/partials/header.ejs') %>
+
+  <main class="min-h-[calc(100vh-var(--header-height-mobile))] md:min-h-[calc(100vh-var(--header-height-desktop))]  flex flex-col items-center justify-center p-6 bg-stone-50">
+
+    <section id="loading-state" class="flex flex-col items-center justify-center space-y-4">
+      <div class="relative w-16 h-16">
+        <div class="absolute inset-0 border-4 border-stone-200 border-t-[#c66f54] rounded-full animate-spin"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#c66f54] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-stone-400 font-medium animate-pulse">Securing Connection...</p>
+    </section>
+
+    <section id="search-state" class="hidden w-full max-w-md bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 text-center">
+      <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-6">Secure Portal</h1>
+      <p class="text-2xl font-display italic text-stone-900 mb-6">Find Your Booking</p>
+      <form id="lookup-form" class="space-y-4">
+        <input type="text" id="booking-ref-input" placeholder="Enter Booking Reference (e.g. SFBOOKING_...)" required class="w-full px-6 py-4 rounded-full border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#c66f54]/20 focus:border-[#c66f54] transition-all text-center uppercase tracking-wider text-sm">
+        <button type="submit" class="btn btn-primary w-full py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">
+          Continue to Payment
+        </button>
+      </form>
+      <p id="error-message" class="mt-4 text-xs text-red-500 hidden italic">Booking reference not found. Please check and try again.</p>
+    </section>
+
+    <section id="payment-state" class="hidden w-full max-w-xl bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12">
+      <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-8 text-center">LUMA Booking Deposits</h1>
+      <p class="text-2xl font-display italic text-stone-900 mb-4">Dear <span class="guest-name-display">...</span>,</p>
+      <p class="text-stone-600 mb-8">We are excited to be welcoming you between <br /><span class="font-semibold text-stone-800" id="formatted-dates">...</span>.</p>
+
+      <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 mb-8">
+        <p class="text-sm text-stone-500 uppercase tracking-tight mb-1">Deposit Amount Due</p>
+        <p class="text-3xl font-display text-emerald-900 font-bold"><span id="display-amount">0</span> INR</p>
+        <p class="mt-4 text-sm text-stone-600 leading-relaxed">
+          In order to secure your booking and prepare for your arrival, please proceed with the payment using the button below.
+        </p>
+      </div>
+
+      <div id="email-collect-container" class="hidden mb-8 p-6 bg-stone-50 rounded-2xl border border-[#c66f54]/20 text-left">
+        <p class="text-sm uppercase tracking-widest text-[#c66f54] font-bold mb-3">Contact Information Required</p>
+        <p class="text-sm text-stone-500 mb-4 leading-relaxed">Please provide your personal email where we will send you the payment receipt.</p>
+        <input type="email" id="manual-email-input" placeholder="your@email.com" class="w-full px-6 py-4 rounded-full border border-stone-200 focus:ring-2 focus:ring-[#c66f54]/20 focus:border-[#c66f54] outline-none text-center transition-all text-sm">
+        <p id="email-error" class="hidden text-xs text-red-500 mt-2 text-center uppercase tracking-tighter font-bold">Please enter a valid email address</p>
+      </div>
+
+      <div class="flex justify-center mb-8">
+        <button id="pay-button" onclick="handlePaymentClick()" class="w-full py-4 btn btn-primary rounded-full font-bold cursor-pointer shadow-lg shadow-[#c66f54]/20 flex items-center justify-center gap-2" disabled>
+          <span>Secure Booking Deposit</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.586 21h14.828a2 2 0 001.965-1.515L22 17" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="pt-8 border-t border-stone-100 text-center">
+        <p class="text-xs text-stone-400 mb-4">Not the correct booking?</p>
+        <button onclick="resetToSearch()" class="cursor-pointer text-sm font-semibold text-[#c66f54] hover:text-[#b05e46] transition-colors underline decoration-stone-200 underline-offset-4">
+          Search for a different reference
+        </button>
+      </div>
+
+      <style>
+        .razorpay-payment-button {
+          width: 100% !important;
+          background-color: #c66f54 !important;
+          /* Your brand color */
+          border-radius: 9999px !important;
+          padding: 8px 16px !important;
+          font-weight: 700 !important;
+          font-family: inherit !important;
+          box-shadow: 0 10px 15px -3px rgba(198, 111, 84, 0.3) !important;
+          transition: all 0.3s ease !important;
+        }
+
+        .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv {
+          width: 100% !important;
+          background-color: transparent !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+
+        .razorpay-payment-button .PaymentButton-contents.svelte-ekc7fv.svelte-ekc7fv {
+          margin-top: 6px;
+        }
+
+        .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv::before {
+          background: none !important;
+        }
+
+
+        .razorpay-payment-button .PaymentButton-text.svelte-ekc7fv.svelte-ekc7fv {
+          font-size: 18px;
+        }
+
+        .razorpay-payment-button:hover {
+          transform: translateY(-2px);
+          background-color: #b05e46 !important;
+        }
+      </style>
+    </section>
+
+    <section id="deposit-already-paid-state" class="hidden w-full max-w-md bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 text-center">
+      <div class="mb-8 flex justify-center">
+        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-6">Deposit Confirmed</h1>
+      <p class="text-2xl font-display italic text-stone-900 mb-6">Dear <span class="guest-name-display">...</span>,</p>
+      <p class="text-stone-600 mb-8 leading-relaxed">
+        Our records show that the deposit for this booking has already been successfully received. Thank you!
+      </p>
+
+      <div class="space-y-4">
+        <a href="/" class="inline-block w-full py-4 bg-stone-900 text-white rounded-full font-bold hover:bg-stone-800 transition-all text-sm uppercase tracking-widest">
+          Return to Home
+        </a>
+        <button onclick="resetToSearch()" class="btn text-sm font-semibold text-primary hover:text-[#b05e46] underline decoration-stone-200 underline-offset-4">
+          Search for another booking
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <%- include('./src/partials/footer.ejs') %>
+
+  <script>
+    let currentBookingData = null;
+    let currentBookingId = null;
+
+    async function init() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingId = urlParams.get('id');
+
+      if (bookingId) {
+        validateAndShow(bookingId.toUpperCase());
+      } else {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('search-state').classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('lookup-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const inputRef = document.getElementById('booking-ref-input').value.trim().toUpperCase();
+      validateAndShow(inputRef);
+    });
+
+    async function validateAndShow(id) {
+      const loading = document.getElementById('loading-state');
+      const search = document.getElementById('search-state');
+      const payment = document.getElementById('payment-state');
+      const alreadyPaid = document.getElementById('deposit-already-paid-state');
+
+      loading.classList.remove('hidden');
+      search.classList.add('hidden');
+      alreadyPaid.classList.add('hidden');
+
+      try {
+        const response = await fetch(`/.netlify/functions/get-booking?id=${id}`);
+
+        if (response.ok) {
+          const data = await response.json();
+
+          // Store data for the handlePaymentClick function
+          currentBookingData = data;
+          currentBookingId = id;
+
+          const {
+            depositPaid,
+            customerEmail
+          } = data;
+
+          const emailContainer = document.getElementById('email-collect-container');
+          if (!customerEmail) {
+            emailContainer.classList.remove('hidden'); // Show if email is empty string
+          } else {
+            emailContainer.classList.add('hidden');
+          }
+
+          // Update UI Text
+          document.querySelectorAll('.guest-name-display').forEach(el => el.textContent = data.customerName);
+          document.getElementById('display-amount').textContent = Number(data.depositAmount).toLocaleString('en-IN');
+          document.getElementById('formatted-dates').textContent =
+            `${formatHumanDate(data.checkIn)} and ${formatHumanDate(data.checkOut)}`;
+
+          // Show payment state only if deposit is not paid, otherwise show thank you state.
+          if (data.depositPaid === true) {
+            alreadyPaid.classList.remove('hidden');
+          } else {
+            alreadyPaid.classList.add('hidden');
+            document.getElementById('pay-button').disabled = false;
+            payment.classList.remove('hidden');
+          }
+          loading.classList.add('hidden');
+
+          // Update URL and show payment state
+          const newUrl = `${window.location.pathname}?id=${id}`;
+          window.history.pushState({
+            path: newUrl
+          }, '', newUrl);
+        } else {
+          throw new Error("Booking not found");
+        }
+      } catch (err) {
+        loading.classList.add('hidden');
+        search.classList.remove('hidden');
+        document.getElementById('error-message').classList.remove('hidden');
+      }
+    }
+
+    async function handlePaymentClick() {
+      const emailInput = document.getElementById('manual-email-input');
+      const emailError = document.getElementById('email-error');
+      const payBtn = document.getElementById('pay-button');
+      const originalText = payBtn.innerHTML;
+
+      // Disable button and show loading state
+      payBtn.disabled = true;
+      payBtn.innerHTML = `<span class="animate-pulse">Processing...</span>`;
+
+      let finalEmail = currentBookingData.customerEmail;
+
+      if (!finalEmail) {
+        const manualEmail = emailInput.value.trim();
+        // Standard email regex pattern
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(manualEmail)) {
+          // Show error and abort
+          emailError.classList.remove('hidden');
+          emailInput.classList.add('border-red-500'); // Visual cue for the user
+          emailInput.focus();
+          payBtn.disabled = false;
+          payBtn.innerHTML = originalText;
+          return;
+        }
+
+        // If valid, assign it to finalEmail
+        finalEmail = manualEmail;
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+      }
+
+      try {
+        // 1. Create the Razorpay Order via your Netlify function
+        const response = await fetch(`/.netlify/functions/create-order?amount=${currentBookingData.depositAmount}&id=${currentBookingId}`);
+        const order = await response.json();
+
+        if (!response.ok) throw new Error(order.error);
+
+        // .normalize('NFD') separates letters from their accents (e.g., "é" becomes "e" + "´")
+        // .replace(/[\u0300-\u036f]/g, "") removes those separate accent marks
+        const normalizedName = currentBookingData.customerName
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, "");
+
+        const sanitizedName = normalizedName
+          .replace(/[^a-zA-Z\s.]/g, '') // Keep only letters, spaces, and periods
+          .trim() || "Valued Guest";
+
+        const contact = currentBookingData.customerPhone || "";
+
+        const options = {
+          key: "rzp_test_SEgK7Hi9IClyZA",
+          amount: order.amount,
+          currency: "INR",
+          name: "LUMA Goa",
+          description: `Deposit for ${currentBookingId}`,
+          order_id: order.id, // The ID returned by create-order function
+          handler: function(response) {
+            const originalName = encodeURIComponent(currentBookingData.customerName);
+            const arrivalDate = encodeURIComponent(currentBookingData.checkIn);
+            // Redirect to success page on successful payment
+            window.location.href = `/payment-success?id=${currentBookingId}&payment_id=${response.razorpay_payment_id}&name=${originalName}&arrival=${arrivalDate}`;
+          },
+          prefill: {
+            name: sanitizedName,
+            email: finalEmail,
+            contact,
+          },
+          theme: {
+            color: "#c66f54"
+          },
+          modal: {
+            backdropclose: true,
+            escape: true,
+          },
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+
+      } catch (err) {
+        console.error(err);
+        alert("Payment initialization failed. Please try again.");
+      } finally {
+        // Re-enable button
+        payBtn.disabled = false;
+        payBtn.innerHTML = originalText;
+      }
+    }
+
+
+    function formatHumanDate(dateStr) {
+      if (!dateStr) return '...';
+      const date = new Date(dateStr);
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+      const d = date.getDate();
+      // Standard ordinal suffix logic
+      const suffix = (d > 3 && d < 21) ? 'th' : ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'][d % 10];
+
+      return `${days[date.getDay()]} ${months[date.getMonth()]} ${d}${suffix} ${date.getFullYear()}`;
+    }
+
+    function resetToSearch() {
+      const search = document.getElementById('search-state');
+      const payment = document.getElementById('payment-state');
+      const input = document.getElementById('booking-ref-input');
+      const error = document.getElementById('error-message');
+      const alreadyPaid = document.getElementById('deposit-already-paid-state');
+
+      // 1. Clear previous inputs/errors
+      input.value = '';
+      error.classList.add('hidden');
+      alreadyPaid.classList.add('hidden');
+
+      // 2. Toggle Visibility
+      payment.classList.add('hidden');
+      search.classList.remove('hidden');
+
+      // 3. Clean the URL (Remove the ?id= parameter)
+      const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.pushState({
+        path: cleanUrl
+      }, '', cleanUrl);
+    }
+
+    init();
+  </script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
