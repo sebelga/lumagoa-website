@@ -1,8 +1,6 @@
 const Razorpay = require("razorpay");
 
 exports.handler = async (event) => {
-  // Only allow POST or GET depending on your preference;
-  // POST is generally better for creating resources.
   const amount = event.queryStringParameters.amount;
   const bookingId = event.queryStringParameters.id || "manual_entry";
 

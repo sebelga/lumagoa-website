@@ -78,7 +78,6 @@
       </div>
 
       <style>
-        /* This targets the Razorpay button to make it fit your brand better */
         .razorpay-payment-button {
           width: 100% !important;
           background-color: #c66f54 !important;
@@ -255,7 +254,7 @@
           emailInput.focus();
           payBtn.disabled = false;
           payBtn.innerHTML = originalText;
-          return; // Stop the function here
+          return;
         }
 
         // If valid, assign it to finalEmail
@@ -281,7 +280,6 @@
           .replace(/[^a-zA-Z\s.]/g, '') // Keep only letters, spaces, and periods
           .trim() || "Valued Guest";
 
-        // 2. Configure Razorpay Checkout
         const options = {
           key: "rzp_test_SEgK7Hi9IClyZA",
           amount: order.amount,
@@ -304,7 +302,7 @@
             color: "#c66f54"
           },
           modal: {
-            backdropClose: true,
+            backdropclose: true,
             escape: true,
           },
         };
