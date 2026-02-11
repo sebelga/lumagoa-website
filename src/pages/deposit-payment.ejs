@@ -54,6 +54,13 @@
         </p>
       </div>
 
+      <div id="email-collect-container" class="hidden mb-8 p-6 bg-stone-50 rounded-2xl border border-[#c66f54]/20 text-left">
+        <p class="text-sm uppercase tracking-widest text-[#c66f54] font-bold mb-3">Contact Information Required</p>
+        <p class="text-sm text-stone-500 mb-4 leading-relaxed">Please provide your personal email where we will send you the payment receipt.</p>
+        <input type="email" id="manual-email-input" placeholder="your@email.com" class="w-full px-6 py-4 rounded-full border border-stone-200 focus:ring-2 focus:ring-[#c66f54]/20 focus:border-[#c66f54] outline-none text-center transition-all text-sm">
+        <p id="email-error" class="hidden text-xs text-red-500 mt-2 text-center uppercase tracking-tighter font-bold">Please enter a valid email address</p>
+      </div>
+
       <div class="flex justify-center mb-8">
         <button id="pay-button" onclick="handlePaymentClick()" class="w-full py-4 btn btn-primary rounded-full font-bold cursor-pointer shadow-lg shadow-[#c66f54]/20 flex items-center justify-center gap-2" disabled>
           <span>Secure Booking Deposit</span>
@@ -61,10 +68,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.586 21h14.828a2 2 0 001.965-1.515L22 17" />
           </svg>
         </button>
-      </div>
-
-      <div class="pt-4 flex justify-center min-h-[54px]">
-        <form id="razorpay-container" class="w-full"></form>
       </div>
 
       <div class="pt-8 border-t border-stone-100 text-center">
@@ -186,9 +189,16 @@
           currentBookingId = id;
 
           const {
-            depositPaid
+            depositPaid,
+            customerEmail
           } = data;
-          // Show payment state only if deposit is not paid, otherwise show thank you state.
+
+          const emailContainer = document.getElementById('email-collect-container');
+          if (!customerEmail) {
+            emailContainer.classList.remove('hidden'); // Show if email is empty string
+          } else {
+            emailContainer.classList.add('hidden');
+          }
 
           // Update UI Text
           document.querySelectorAll('.guest-name-display').forEach(el => el.textContent = data.customerName);
@@ -196,6 +206,7 @@
           document.getElementById('formatted-dates').textContent =
             `${formatHumanDate(data.checkIn)} and ${formatHumanDate(data.checkOut)}`;
 
+          // Show payment state only if deposit is not paid, otherwise show thank you state.
           if (data.depositPaid === true) {
             alreadyPaid.classList.remove('hidden');
           } else {
@@ -221,12 +232,37 @@
     }
 
     async function handlePaymentClick() {
+      const emailInput = document.getElementById('manual-email-input');
+      const emailError = document.getElementById('email-error');
       const payBtn = document.getElementById('pay-button');
       const originalText = payBtn.innerHTML;
 
       // Disable button and show loading state
       payBtn.disabled = true;
       payBtn.innerHTML = `<span class="animate-pulse">Processing...</span>`;
+
+      let finalEmail = currentBookingData.customerEmail;
+
+      if (!finalEmail) {
+        const manualEmail = emailInput.value.trim();
+        // Standard email regex pattern
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(manualEmail)) {
+          // Show error and abort
+          emailError.classList.remove('hidden');
+          emailInput.classList.add('border-red-500'); // Visual cue for the user
+          emailInput.focus();
+          payBtn.disabled = false;
+          payBtn.innerHTML = originalText;
+          return; // Stop the function here
+        }
+
+        // If valid, assign it to finalEmail
+        finalEmail = manualEmail;
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+      }
 
       try {
         // 1. Create the Razorpay Order via your Netlify function
@@ -261,7 +297,8 @@
           },
           prefill: {
             name: sanitizedName,
-            email: currentBookingData.customerEmail,
+            email: finalEmail,
+            contact: currentBookingData.customerPhone || ""
           },
           theme: {
             color: "#c66f54"
