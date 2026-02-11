@@ -7,7 +7,7 @@
   extraMeta: '<meta name="robots" content="noindex, nofollow">'
 }) %>
 
-<body class="pt-[75px] md:pt-[102px]">
+<body class="pt-[var(--header-height-mobile)] md:pt-[var(--header-height-desktop)]">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFRQ57PP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
@@ -15,100 +15,251 @@
   <!-- Header -->
   <%- include('./src/partials/header.ejs') %>
 
-  <main class="min-h-[calc(100vh-var(--header-height-mobile))] md:min-h-[calc(100vh-var(--header-height-desktop))] flex flex-col items-center justify-center p-6">
-    <div class="w-full max-w-xl bg-white rounded-3xl shadow-sm border border-stone-100 overflow-hidden">
+  <main class="min-h-[calc(100vh-var(--header-height-mobile))] md:min-h-[calc(100vh-var(--header-height-desktop))]  flex flex-col items-center justify-center p-6 bg-stone-50">
 
-      <div class="bg-stone-900 py-6 px-8 text-center">
-        <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold">LUMA Booking Deposits</h1>
+    <section id="loading-state" class="flex flex-col items-center justify-center space-y-4">
+      <div class="relative w-16 h-16">
+        <div class="absolute inset-0 border-4 border-stone-200 border-t-[#c66f54] rounded-full animate-spin"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#c66f54] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+      </div>
+      <p class="text-xs uppercase tracking-[0.3em] text-stone-400 font-medium animate-pulse">Securing Connection...</p>
+    </section>
+
+    <section id="search-state" class="hidden w-full max-w-md bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 text-center">
+      <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-6">Secure Portal</h1>
+      <p class="text-2xl font-display italic text-stone-900 mb-6">Find Your Booking</p>
+      <form id="lookup-form" class="space-y-4">
+        <input type="text" id="booking-ref-input" placeholder="Enter Booking Reference (e.g. SFBOOKING_...)" required class="w-full px-6 py-4 rounded-full border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#c66f54]/20 focus:border-[#c66f54] transition-all text-center uppercase tracking-wider text-sm">
+        <button type="submit" class="cursor-pointer w-full py-4 bg-[#c66f54] text-white rounded-full font-bold hover:bg-opacity-90 transition-all">
+          Continue to Payment
+        </button>
+      </form>
+      <p id="error-message" class="mt-4 text-xs text-red-500 hidden italic">Booking reference not found. Please check and try again.</p>
+    </section>
+
+    <section id="payment-state" class="hidden w-full max-w-xl bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12">
+      <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-8 text-center">LUMA Booking Deposits</h1>
+      <p class="text-2xl font-display italic text-stone-900 mb-4">Dear <span id="guest-name">...</span>,</p>
+      <p class="text-stone-600 mb-8">We are excited to be welcoming you between <span class="font-semibold text-stone-800" id="formatted-dates">...</span>.</p>
+
+      <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100 mb-8">
+        <p class="text-sm text-stone-500 uppercase tracking-tight mb-1">Deposit Amount Due</p>
+        <p class="text-3xl font-display text-emerald-900 font-bold"><span id="display-amount">0</span> INR</p>
+        <p class="mt-4 text-sm text-stone-600 leading-relaxed">
+          In order to secure your booking and prepare for your arrival, please proceed with the payment using the button below.
+        </p>
       </div>
 
-      <div class="p-8 md:p-12 space-y-8">
-
-        <div class="space-y-4">
-          <p class="text-2xl font-serif italic text-stone-900">Dear John Smith,</p>
-          <p class="text-stone-600 leading-relaxed">
-            We are excited to be welcoming you to our resort between
-            <span class="font-semibold text-stone-800">Friday, March 22nd, 2026</span> and
-            <span class="font-semibold text-stone-800">Monday, March 25th, 2026</span>.
-          </p>
-        </div>
-
-        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-100">
-          <p class="text-sm text-stone-500 mb-2 uppercase tracking-tight">Deposit Amount Due</p>
-          <p class="text-3xl font-serif text-emerald-900 font-bold">22,450 INR</p>
-          <p class="mt-4 text-sm text-stone-600 leading-relaxed">
-            In order to secure your booking and prepare for your arrival, please proceed with the payment using the button below.
-          </p>
-        </div>
-
-        <div class="pt-4 flex justify-center">
-          <form class="w-full">
-            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_S7G4GVIu4lg6UN" data-prefill.amount.deposit_amount="500" async>
-            </script>
-
-            <style>
-              /* This targets the Razorpay button to make it fit your brand better */
-              .razorpay-payment-button {
-                width: 100% !important;
-                background-color: #c66f54 !important;
-                /* Your brand color */
-                border-radius: 9999px !important;
-                padding: 8px 16px !important;
-                font-weight: 700 !important;
-                font-family: inherit !important;
-                box-shadow: 0 10px 15px -3px rgba(198, 111, 84, 0.3) !important;
-                transition: all 0.3s ease !important;
-              }
-
-              .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv {
-                width: 100% !important;
-                background-color: transparent !important;
-                border: none !important;
-                padding: 0 !important;
-              }
-
-              .razorpay-payment-button .PaymentButton-contents.svelte-ekc7fv.svelte-ekc7fv {
-                margin-top: 6px;
-              }
-
-              .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv::before {
-                background: none !important;
-              }
-
-
-              .razorpay-payment-button .PaymentButton-text.svelte-ekc7fv.svelte-ekc7fv {
-                font-size: 18px;
-              }
-
-              .razorpay-payment-button:hover {
-                transform: translateY(-2px);
-                background-color: #b05e46 !important;
-              }
-            </style>
-          </form>
-        </div>
-
-        <div class="pt-8 border-t border-stone-100 text-center">
-          <p class="text-xs text-stone-400">
-            Having trouble with payment? <br>
-            <a href="https://wa.me/918087723455" class="text-stone-600 underline">Contact our team on WhatsApp</a>
-          </p>
-        </div>
-
+      <div class="pt-4 flex justify-center min-h-[54px]">
+        <form id="razorpay-container" class="w-full"></form>
       </div>
-    </div>
 
-    <div class="mt-8 flex items-center gap-2 text-stone-400 text-xs">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-      </svg>
-      <span>Secure Encrypted Payment via Razorpay</span>
-    </div>
+      <div class="pt-8 border-t border-stone-100 text-center">
+        <p class="text-xs text-stone-400 mb-4">Not the correct booking?</p>
+        <button onclick="resetToSearch()" class="cursor-pointer text-sm font-semibold text-[#c66f54] hover:text-[#b05e46] transition-colors underline decoration-stone-200 underline-offset-4">
+          Search for a different reference
+        </button>
+      </div>
+
+      <style>
+        /* This targets the Razorpay button to make it fit your brand better */
+        .razorpay-payment-button {
+          width: 100% !important;
+          background-color: #c66f54 !important;
+          /* Your brand color */
+          border-radius: 9999px !important;
+          padding: 8px 16px !important;
+          font-weight: 700 !important;
+          font-family: inherit !important;
+          box-shadow: 0 10px 15px -3px rgba(198, 111, 84, 0.3) !important;
+          transition: all 0.3s ease !important;
+        }
+
+        .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv {
+          width: 100% !important;
+          background-color: transparent !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+
+        .razorpay-payment-button .PaymentButton-contents.svelte-ekc7fv.svelte-ekc7fv {
+          margin-top: 6px;
+        }
+
+        .razorpay-payment-button .PaymentButton.svelte-ekc7fv.svelte-ekc7fv::before {
+          background: none !important;
+        }
+
+
+        .razorpay-payment-button .PaymentButton-text.svelte-ekc7fv.svelte-ekc7fv {
+          font-size: 18px;
+        }
+
+        .razorpay-payment-button:hover {
+          transform: translateY(-2px);
+          background-color: #b05e46 !important;
+        }
+      </style>
+    </section>
 
   </main>
 
   <%- include('./src/partials/footer.ejs') %>
 
+  <script>
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTsG34EwRFGH0WFutCggfhr0U0UGaipzgOGwTv9kfzm-BM_o8pQ-BTnKl3vdQhP8oLnYDn5dkkiceBI/pub?output=csv&gid=0';
+
+    async function init() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookingId = urlParams.get('id');
+
+      if (bookingId) {
+        validateAndShow(bookingId.toUpperCase());
+      } else {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('search-state').classList.remove('hidden');
+      }
+    }
+
+    // Handle the Manual Form Submission
+    document.getElementById('lookup-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const inputRef = document.getElementById('booking-ref-input').value.trim().toUpperCase();
+      validateAndShow(inputRef);
+    });
+
+    async function validateAndShow(id) {
+      const loading = document.getElementById('loading-state');
+      const search = document.getElementById('search-state');
+      const payment = document.getElementById('payment-state');
+      const error = document.getElementById('error-message');
+
+      // Show loader, hide everything else
+      loading.classList.remove('hidden');
+      search.classList.add('hidden');
+      payment.classList.add('hidden');
+      error.classList.add('hidden');
+
+      try {
+        // Fetch the CSV with a timestamp to bust the browser cache
+        const response = await fetch(`${csvUrl}&t=${new Date().getTime()}`, {
+          cache: 'no-store'
+        });
+        const csvText = await response.text();
+
+        // Simple CSV Parser
+        const rows = csvText.split('\n').map(row => row.split(','));
+        const dataRows = rows.slice(1); // Skip headers
+
+        // Find the specific booking (ID is in Column A / index 0)
+        const bookingRow = dataRows.find(row => row[0].trim().toUpperCase() === id);
+        console.log(bookingRow)
+
+        if (bookingRow) {
+          // Map CSV columns to data object
+          const data = {
+            customerName: bookingRow[1],
+            checkIn: bookingRow[2],
+            checkOut: bookingRow[3],
+            depositAmount: bookingRow[4].trim()
+          };
+
+          // Update UI Text content
+          document.getElementById('guest-name').textContent = data.customerName;
+          document.getElementById('display-amount').textContent = Number(data.depositAmount).toLocaleString('en-IN');
+          document.getElementById('formatted-dates').textContent =
+            `${formatHumanDate(data.checkIn)} and ${formatHumanDate(data.checkOut)}`;
+
+          // Inject Razorpay with the dynamic amount
+          injectRazorpay(data.depositAmount);
+
+          // Switch Visibility
+          document.getElementById('search-state').classList.add('hidden');
+          document.getElementById('payment-state').classList.remove('hidden');
+          document.getElementById('error-message').classList.add('hidden');
+
+          // Hide loader and reveal payment
+          loading.classList.add('hidden');
+          payment.classList.remove('hidden');
+
+          // Update URL for bookmarking/refreshing
+          const newUrl = `${window.location.pathname}?id=${id}`;
+          window.history.pushState({
+            path: newUrl
+          }, '', newUrl);
+
+        } else {
+          // ID not found: Back to search with error
+          loading.classList.add('hidden');
+          search.classList.remove('hidden');
+          error.classList.remove('hidden');
+
+        }
+      } catch (err) {
+        loading.classList.add('hidden');
+        search.classList.remove('hidden');
+
+        console.error("CSV Fetch Error:", err);
+        alert("The booking system is temporarily unavailable. Please try again later.");
+      }
+    }
+
+    function injectRazorpay(amount) {
+      const container = document.getElementById('razorpay-container');
+      container.innerHTML = ''; // Clear existing button if any
+
+      const script = document.createElement('script');
+      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+      script.dataset.payment_button_id = "pl_S7G4GVIu4lg6UN";
+
+      // Pass the raw amount to the prefill attribute
+      const cleanAmount = amount.replace(/,/g, '');
+      script.setAttribute('data-prefill.amount.deposit_amount', cleanAmount);
+
+      script.async = true;
+      container.appendChild(script);
+    }
+
+    function formatHumanDate(dateStr) {
+      if (!dateStr) return '...';
+      const date = new Date(dateStr);
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+      const d = date.getDate();
+      // Standard ordinal suffix logic
+      const suffix = (d > 3 && d < 21) ? 'th' : ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'][d % 10];
+
+      return `${days[date.getDay()]} ${months[date.getMonth()]} ${d}${suffix} ${date.getFullYear()}`;
+    }
+
+    function resetToSearch() {
+      const search = document.getElementById('search-state');
+      const payment = document.getElementById('payment-state');
+      const input = document.getElementById('booking-ref-input');
+      const error = document.getElementById('error-message');
+
+      // 1. Clear previous inputs/errors
+      input.value = '';
+      error.classList.add('hidden');
+
+      // 2. Toggle Visibility
+      payment.classList.add('hidden');
+      search.classList.remove('hidden');
+
+      // 3. Clean the URL (Remove the ?id= parameter)
+      const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.pushState({
+        path: cleanUrl
+      }, '', cleanUrl);
+    }
+
+    init();
+  </script>
   <script type="module" src="/src/main.ts"></script>
 </body>
 
