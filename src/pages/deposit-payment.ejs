@@ -280,6 +280,8 @@
           .replace(/[^a-zA-Z\s.]/g, '') // Keep only letters, spaces, and periods
           .trim() || "Valued Guest";
 
+        const contact = currentBookingData.customerPhone || "";
+
         const options = {
           key: "rzp_test_SEgK7Hi9IClyZA",
           amount: order.amount,
@@ -296,7 +298,7 @@
           prefill: {
             name: sanitizedName,
             email: finalEmail,
-            contact: currentBookingData.customerPhone || ""
+            contact,
           },
           theme: {
             color: "#c66f54"
