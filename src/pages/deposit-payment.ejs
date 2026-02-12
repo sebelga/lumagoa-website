@@ -16,12 +16,12 @@
   <%- include('./src/partials/header.ejs') %>
 
   <main class="min-h-[calc(100vh-var(--header-height-mobile))] md:min-h-[calc(100vh-var(--header-height-desktop))]  flex flex-col items-center justify-center p-6 bg-stone-50">
-
+    <!-- Loading state -->
     <section id="loading-state" class="flex flex-col items-center justify-center space-y-4">
       <div class="relative w-16 h-16">
         <div class="absolute inset-0 border-4 border-stone-200 border-t-[#c66f54] rounded-full animate-spin"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <svg class="w-6 h-6 text-[#c66f54] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-primary animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
         </div>
@@ -29,6 +29,7 @@
       <p class="text-xs uppercase tracking-[0.3em] text-stone-400 font-medium animate-pulse">Securing Connection...</p>
     </section>
 
+    <!-- Search state -->
     <section id="search-state" class="hidden w-full max-w-md bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 text-center">
       <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-6">Secure Portal</h1>
       <p class="text-2xl font-display italic text-stone-900 mb-6">Find Your Booking</p>
@@ -41,6 +42,7 @@
       <p id="error-message" class="mt-4 text-xs text-red-500 hidden italic">Booking reference not found. Please check and try again.</p>
     </section>
 
+    <!-- Payment state -->
     <section id="payment-state" class="hidden w-full max-w-xl bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12">
       <h1 class="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold mb-8 text-center">LUMA Booking Deposits</h1>
       <p class="text-2xl font-display italic text-stone-900 mb-4">Dear <span class="guest-name-display">...</span>,</p>
@@ -54,15 +56,30 @@
         </p>
       </div>
 
-      <div id="email-collect-container" class="hidden mb-8 p-6 bg-stone-50 rounded-2xl border border-[#c66f54]/20 text-left">
-        <p class="text-sm uppercase tracking-widest text-[#c66f54] font-bold mb-3">Contact Information Required</p>
-        <p class="text-sm text-stone-500 mb-4 leading-relaxed">Please provide your personal email where we will send you the payment receipt.</p>
-        <input type="email" id="manual-email-input" placeholder="your@email.com" class="w-full px-6 py-4 rounded-full border border-stone-200 focus:ring-2 focus:ring-[#c66f54]/20 focus:border-[#c66f54] outline-none text-center transition-all text-sm">
-        <p id="email-error" class="hidden text-xs text-red-500 mt-2 text-center uppercase tracking-tighter font-bold">Please enter a valid email address</p>
+      <!-- Email input collector -->
+      <div id="email-collect-container" class="hidden mb-8 p-6 bg-stone-50 rounded-2xl border border-primary/20 text-left">
+        <p class="text-sm uppercase tracking-widest text-primary font-bold mb-3">Contact Information</p>
+
+        <div id="email-display-wrapper" class="hidden">
+          <p class="text-sm text-stone-500 mb-4 leading-relaxed">Your payment confirmation will be sent here:</p>
+          <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-stone-100">
+            <span id="display-known-email" class="text-sm font-medium text-stone-800 italic">...</span>
+            <button type="button" onclick="showManualEmailInput()" class="text-sm uppercase tracking-tighter font-bold text-primary hover:underline cursor-pointer">
+              Change email
+            </button>
+          </div>
+        </div>
+
+        <div id="email-input-wrapper" class="hidden">
+          <p class="text-sm text-stone-500 mb-4 leading-relaxed">Please provide your personal email for the official payment receipt.</p>
+          <input type="email" id="manual-email-input" placeholder="your@email.com" class="w-full px-6 py-4 rounded-full border border-stone-200 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-center transition-all text-sm">
+          <p id="email-error" class="hidden text-sm text-red-500 mt-2 text-center uppercase tracking-tighter font-bold">Please enter a valid email address</p>
+        </div>
       </div>
 
+      <!-- Pay deposit button -->
       <div class="flex justify-center mb-8">
-        <button id="pay-button" onclick="handlePaymentClick()" class="w-full py-4 btn btn-primary rounded-full font-bold cursor-pointer shadow-lg shadow-[#c66f54]/20 flex items-center justify-center gap-2" disabled>
+        <button id="pay-button" onclick="handlePaymentClick()" class="w-full py-4 btn btn-primary rounded-full font-bold cursor-pointer shadow-lg shadow-primary/20 flex items-center justify-center gap-2" disabled>
           <span>Secure Booking Deposit</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.586 21h14.828a2 2 0 001.965-1.515L22 17" />
@@ -70,9 +87,10 @@
         </button>
       </div>
 
+      <!-- Search for other booking -->
       <div class="pt-8 border-t border-stone-100 text-center">
         <p class="text-xs text-stone-400 mb-4">Not the correct booking?</p>
-        <button onclick="resetToSearch()" class="cursor-pointer text-sm font-semibold text-[#c66f54] hover:text-[#b05e46] transition-colors underline decoration-stone-200 underline-offset-4">
+        <button onclick="resetToSearch()" class="cursor-pointer text-sm font-semibold text-primary hover:text-[#b05e46] transition-colors underline decoration-stone-200 underline-offset-4">
           Search for a different reference
         </button>
       </div>
@@ -117,6 +135,7 @@
       </style>
     </section>
 
+    <!-- Deposit already paid state -->
     <section id="deposit-already-paid-state" class="hidden w-full max-w-md bg-white rounded-3xl shadow-sm border border-stone-100 p-8 md:p-12 text-center">
       <div class="mb-8 flex justify-center">
         <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center">
@@ -167,6 +186,14 @@
       validateAndShow(inputRef);
     });
 
+    function showManualEmailInput() {
+      document.getElementById('email-display-wrapper').classList.add('hidden');
+      document.getElementById('email-input-wrapper').classList.remove('hidden');
+      // Clear the global data email so handlePaymentClick knows to check the input field
+      currentBookingData.customerEmail = "";
+      document.getElementById('manual-email-input').focus();
+    }
+
     async function validateAndShow(id) {
       const loading = document.getElementById('loading-state');
       const search = document.getElementById('search-state');
@@ -193,10 +220,20 @@
           } = data;
 
           const emailContainer = document.getElementById('email-collect-container');
-          if (!customerEmail) {
-            emailContainer.classList.remove('hidden'); // Show if email is empty string
+          const displayWrapper = document.getElementById('email-display-wrapper');
+          const inputWrapper = document.getElementById('email-input-wrapper');
+
+          emailContainer.classList.remove('hidden');
+
+          if (!data.customerEmail) {
+            // Scenario: Missing email (e.g., booking.com domain filtered by backend)
+            displayWrapper.classList.add('hidden');
+            inputWrapper.classList.remove('hidden');
           } else {
-            emailContainer.classList.add('hidden');
+            // Scenario: Valid email exists
+            document.getElementById('display-known-email').textContent = data.customerEmail;
+            displayWrapper.classList.remove('hidden');
+            inputWrapper.classList.add('hidden');
           }
 
           // Update UI Text
@@ -306,6 +343,7 @@
           modal: {
             backdropclose: true,
             escape: true,
+            confirm_close: false,
           },
         };
 
