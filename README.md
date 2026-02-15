@@ -33,3 +33,11 @@ python3 ./scripts/resize_hero_image.py ./public/img/cafe-hero.HEIC
 # Works with JPG
 python3 ./scripts/resize_hero_image.py ./public/img/cafe-hero.jpg
 ```
+
+## Generate Yoga Shala Schedule HTML table
+
+Generate the CSV file from the Google Spreadsheet, then run the following command
+
+```py
+python3 ./scripts/generate_shala_schedule_table.py <CSV_FILE>
+```
