@@ -17,7 +17,7 @@ def generate_html(csv_file):
     # Regex for time: 1-2 digits + colon/minutes OR 1-2 digits + am/pm
     time_pattern = re.compile(r'(\d{1,2}:\d{2})|(\d{1,2}\s?(am|pm))', re.IGNORECASE)
 
-    html = ['<table class="w-full min-w-[250] table-fixed border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">']
+    html = ['<table class="w-full min-w-[1000px] table-fixed border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">']
     
     html.append('<thead class="bg-stone-50 border-b border-stone-100">')
     html.append('<tr>')
