@@ -41,3 +41,15 @@ Generate the CSV file from the Google Spreadsheet, then run the following comman
 ```py
 python3 ./scripts/generate_shala_schedule_table.py <CSV_FILE>
 ```
+
+Alternatively you can publish a Google Spreadsheet as CSV and then create an `.env` file with the following
+
+```
+SCHEDULE_SPREADSHEET=<PUBLISHED-URL>
+```
+
+You then don't need to pass a CSV file to the script
+
+```py
+python3 ./scripts/generate_shala_schedule_table.py
+```

@@ -1,16 +1,45 @@
 import csv
 import sys
 import re
+import os
+import io
+import time
+import requests
+from dotenv import load_dotenv
+
 try:
     import pyperclip
 except ImportError:
     pyperclip = None
 
-def generate_html(csv_file):
-    with open(csv_file, mode='r', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        rows = list(reader)
+# Load environment variables from .env file
+load_dotenv()
 
+def get_csv_rows(source):
+    """
+    Fetches data from a local file path or a URL with a cache-busting timestamp.
+    Returns a list of rows.
+    """
+    if source.startswith(('http://', 'https://')):
+        # Append a timestamp query parameter to bypass cache
+        timestamp = int(time.time())
+        separator = '&' if '?' in source else '?'
+        cache_busting_url = f"{source}{separator}t={timestamp}"
+        
+        response = requests.get(cache_busting_url)
+        response.raise_for_status()
+        
+        # Use io.StringIO to treat the string response like a file
+        f = io.StringIO(response.text)
+        reader = csv.reader(f)
+    else:
+        with open(source, mode='r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+        return list(reader)
+    
+    return list(reader)
+
+def generate_html(rows):
     header = rows[0]
     body_rows = rows[1:]
 
@@ -69,7 +98,6 @@ def generate_html(csv_file):
             
             is_private_session = "Private Sessions" in cell
             
-            # Set TD class
             if is_private_session:
                 td_class = "p-5 text-stone-400 text-xs italic"
             elif is_evening:
@@ -101,11 +129,23 @@ def generate_html(csv_file):
     return "\n".join(html)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python generate_schedule.py input.csv")
-    else:
-        output_html = generate_html(sys.argv[1])
+    # Determine source: Arg first, then .env
+    source = sys.argv[1] if len(sys.argv) > 1 else os.getenv("SCHEDULE_SPREADSHEET")
+
+    if not source:
+        print("Error: No CSV file provided and SCHEDULE_SPREADSHEET not found in .env")
+        sys.exit(1)
+
+    try:
+        csv_rows = get_csv_rows(source)
+        output_html = generate_html(csv_rows)
+        
+        # Print output to terminal
         print(output_html)
+        
+        # Copy to clipboard
         if pyperclip:
             pyperclip.copy(output_html)
             print("\n--- HTML copied to clipboard! ---")
+    except Exception as e:
+        print(f"Error processing schedule: {e}")
