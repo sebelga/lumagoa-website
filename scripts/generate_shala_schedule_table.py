@@ -69,7 +69,7 @@ def generate_html(rows):
         elif time_label == "Morning": row_class = ' class="bg-stone-50/30"'
 
         if is_evening:
-            time_td_class = "p-5 py-6 align-top font-medium text-emerald-400 italic"
+            time_td_class = "p-5 py-6 align-top font-medium text-secondary italic"
         else:
             time_td_class = "p-5 py-8 align-top font-medium text-emerald-800 bg-stone-50/30"
             if time_label in ["Morning", "Afternoon"]: time_td_class += " italic"
@@ -85,7 +85,7 @@ def generate_html(rows):
 
             if not cell or cell.strip() in ["", "—"]:
                 border_color = "stone-800" if is_evening else "stone-50"
-                html.append(f'<td class="p-5 align-top border-l border-{border_color} text-stone-300 italic">—</td>')
+                html.append(f'<td class="p-5 align-top border-l border-{border_color} text-stone-300 italic"></td>')
                 continue
 
             parts = cell.split('|')
@@ -111,7 +111,7 @@ def generate_html(rows):
                 if is_private_session:
                     html.append(text)
                 elif time_pattern.search(text):
-                    time_color = "text-emerald-400" if is_evening else "text-emerald-700"
+                    time_color = "text-secondary" if is_evening else "text-emerald-700"
                     html.append(f'<span class="text-xs {time_color} font-bold block mb-1">{text}</span>')
                 elif i == len(clean_parts) - 1 and len(clean_parts) > 1:
                     instructor_color = "text-stone-500" if is_evening else "text-stone-400"
