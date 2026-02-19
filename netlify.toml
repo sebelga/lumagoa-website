@@ -3,3 +3,9 @@
   to = "/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/winter-renewal.html"
+  to = "/"
+  status = 301
+  force = true
